@@ -1,0 +1,2888 @@
+{
+  "summary": {
+    "total_poets": 72,
+    "total_poems": 169,
+    "total_stanzas": 1801,
+    "total_chunks": 5195,
+    "total_commentary_tokens": 146535,
+    "page_range": [
+      23,
+      413
+    ],
+    "century_span": "13. yy - 21. yy"
+  },
+  "poets": [
+    {
+      "name": "Işık (Caner Işık)",
+      "poem_count": 26,
+      "total_tokens": 4877,
+      "commentary_count": 549,
+      "commentary_tokens": 26272,
+      "stanza_count": 276,
+      "meters": {
+        "11'li hece": 21,
+        "7'li hece": 1
+      },
+      "page_start": 23,
+      "page_end": 192,
+      "birth_year": 1973,
+      "century": "20. yy",
+      "era": "Modern Dönem"
+    },
+    {
+      "name": "Şah Hatayi",
+      "poem_count": 19,
+      "total_tokens": 2733,
+      "commentary_count": 273,
+      "commentary_tokens": 14044,
+      "stanza_count": 174,
+      "meters": {
+        "11'li hece": 10,
+        "8'li hece": 6,
+        "7'li hece": 1
+      },
+      "page_start": 79,
+      "page_end": 180,
+      "birth_year": 1487,
+      "century": "15. yy",
+      "era": "Kurucu Dönem"
+    },
+    {
+      "name": "Pir Sultan Abdal",
+      "poem_count": 14,
+      "total_tokens": 1802,
+      "commentary_count": 195,
+      "commentary_tokens": 9850,
+      "stanza_count": 111,
+      "meters": {
+        "8'li hece": 4,
+        "11'li hece": 9
+      },
+      "page_start": 181,
+      "page_end": 252,
+      "birth_year": 1480,
+      "century": "15. yy",
+      "era": "Kurucu Dönem"
+    },
+    {
+      "name": "Işık Ruhan (Mehmet Ali Işık)",
+      "poem_count": 5,
+      "total_tokens": 838,
+      "commentary_count": 112,
+      "commentary_tokens": 4875,
+      "stanza_count": 48,
+      "meters": {
+        "11'li hece": 4,
+        "8'li hece": 1
+      },
+      "page_start": 273,
+      "page_end": 304,
+      "birth_year": 1928,
+      "century": "20. yy",
+      "era": "Modern Dönem"
+    },
+    {
+      "name": "Kul Fakır Ali Derviş (Ali Oymak)",
+      "poem_count": 5,
+      "total_tokens": 887,
+      "commentary_count": 99,
+      "commentary_tokens": 4648,
+      "stanza_count": 54,
+      "meters": {
+        "11'li hece": 5
+      },
+      "page_start": 171,
+      "page_end": 202,
+      "birth_year": 1880,
+      "century": "19. yy",
+      "era": "Geç Dönem"
+    },
+    {
+      "name": "Harâbî",
+      "poem_count": 2,
+      "total_tokens": 1047,
+      "commentary_count": 103,
+      "commentary_tokens": 4078,
+      "stanza_count": 61,
+      "meters": {
+        "11'li hece": 2
+      },
+      "page_start": 101,
+      "page_end": 132,
+      "birth_year": 1852,
+      "century": "19. yy",
+      "era": "Geç Dönem"
+    },
+    {
+      "name": "Virânî",
+      "poem_count": 4,
+      "total_tokens": 784,
+      "commentary_count": 82,
+      "commentary_tokens": 3836,
+      "stanza_count": 54,
+      "meters": {
+        "11'li hece": 4
+      },
+      "page_start": 269,
+      "page_end": 296,
+      "birth_year": 1600,
+      "century": "17. yy",
+      "era": "Klasik Dönem"
+    },
+    {
+      "name": "Âşık Veysel (Veysel Şatıroğlu)",
+      "poem_count": 5,
+      "total_tokens": 696,
+      "commentary_count": 87,
+      "commentary_tokens": 3570,
+      "stanza_count": 41,
+      "meters": {
+        "11'li hece": 4,
+        "8'li hece": 1
+      },
+      "page_start": 225,
+      "page_end": 252,
+      "birth_year": 1894,
+      "century": "19. yy",
+      "era": "Geç Dönem"
+    },
+    {
+      "name": "Teslim Abdal",
+      "poem_count": 4,
+      "total_tokens": 934,
+      "commentary_count": 99,
+      "commentary_tokens": 3499,
+      "stanza_count": 60,
+      "meters": {
+        "11'li hece": 2,
+        "8'li hece": 1
+      },
+      "page_start": 305,
+      "page_end": 330,
+      "birth_year": 1620,
+      "century": "17. yy",
+      "era": "Klasik Dönem"
+    },
+    {
+      "name": "Seyyid Nesîmî",
+      "poem_count": 2,
+      "total_tokens": 688,
+      "commentary_count": 55,
+      "commentary_tokens": 3580,
+      "stanza_count": 34,
+      "meters": {
+        "11'li hece": 2
+      },
+      "page_start": 55,
+      "page_end": 78,
+      "birth_year": 1369,
+      "century": "14. yy",
+      "era": "Kurucu Dönem"
+    },
+    {
+      "name": "Zakir (Orhan Şahin)",
+      "poem_count": 4,
+      "total_tokens": 663,
+      "commentary_count": 69,
+      "commentary_tokens": 3227,
+      "stanza_count": 40,
+      "meters": {
+        "11'li hece": 3,
+        "8'li hece": 1
+      },
+      "page_start": 203,
+      "page_end": 228,
+      "birth_year": 1980,
+      "century": "20. yy",
+      "era": "Modern Dönem"
+    },
+    {
+      "name": "Sefil Ali",
+      "poem_count": 3,
+      "total_tokens": 604,
+      "commentary_count": 70,
+      "commentary_tokens": 2602,
+      "stanza_count": 39,
+      "meters": {
+        "11'li hece": 3
+      },
+      "page_start": 69,
+      "page_end": 88,
+      "birth_year": 1847,
+      "century": "19. yy",
+      "era": "Geç Dönem"
+    },
+    {
+      "name": "Şah Hatayi (Şah İsmail)",
+      "poem_count": 1,
+      "total_tokens": 536,
+      "commentary_count": 52,
+      "commentary_tokens": 2620,
+      "stanza_count": 43,
+      "meters": {
+        "8'li hece": 1
+      },
+      "page_start": 351,
+      "page_end": 370,
+      "birth_year": 1487,
+      "century": "15. yy",
+      "era": "Kurucu Dönem"
+    },
+    {
+      "name": "Kul Tuncay (Tuncay Salan)",
+      "poem_count": 2,
+      "total_tokens": 332,
+      "commentary_count": 44,
+      "commentary_tokens": 2006,
+      "stanza_count": 21,
+      "meters": {
+        "8'li hece": 2
+      },
+      "page_start": 237,
+      "page_end": 252,
+      "birth_year": 1981,
+      "century": "20. yy",
+      "era": "Modern Dönem"
+    },
+    {
+      "name": "Işık Miraçlaması",
+      "poem_count": 1,
+      "total_tokens": 285,
+      "commentary_count": 29,
+      "commentary_tokens": 2091,
+      "stanza_count": 21,
+      "meters": {
+        "8'li hece": 1
+      },
+      "page_start": 397,
+      "page_end": 412,
+      "birth_year": 1973,
+      "century": "20. yy",
+      "era": "Modern Dönem"
+    },
+    {
+      "name": "Âşık Daimi (İsmail Aydın)",
+      "poem_count": 4,
+      "total_tokens": 460,
+      "commentary_count": 43,
+      "commentary_tokens": 1749,
+      "stanza_count": 31,
+      "meters": {
+        "11'li hece": 3,
+        "8'li hece": 1
+      },
+      "page_start": 311,
+      "page_end": 328,
+      "birth_year": 1932,
+      "century": "20. yy",
+      "era": "Modern Dönem"
+    },
+    {
+      "name": "Kor Pervane (Koray Korkmaz)",
+      "poem_count": 2,
+      "total_tokens": 446,
+      "commentary_count": 31,
+      "commentary_tokens": 1933,
+      "stanza_count": 25,
+      "meters": {
+        "8'li hece": 2
+      },
+      "page_start": 293,
+      "page_end": 308,
+      "birth_year": 1993,
+      "century": "20. yy",
+      "era": "Modern Dönem"
+    },
+    {
+      "name": "Âşık Sıdkî (Zeynel Abidin)",
+      "poem_count": 2,
+      "total_tokens": 481,
+      "commentary_count": 51,
+      "commentary_tokens": 1906,
+      "stanza_count": 27,
+      "meters": {
+        "11'li hece": 2
+      },
+      "page_start": 155,
+      "page_end": 170,
+      "birth_year": 1865,
+      "century": "19. yy",
+      "era": "Geç Dönem"
+    },
+    {
+      "name": "Kaygusuz Abdal",
+      "poem_count": 2,
+      "total_tokens": 278,
+      "commentary_count": 39,
+      "commentary_tokens": 1731,
+      "stanza_count": 20,
+      "meters": {
+        "7'li hece": 1,
+        "8'li hece": 1
+      },
+      "page_start": 41,
+      "page_end": 54,
+      "birth_year": 1341,
+      "century": "14. yy",
+      "era": "Kurucu Dönem"
+    },
+    {
+      "name": "Noksanî",
+      "poem_count": 2,
+      "total_tokens": 204,
+      "commentary_count": 31,
+      "commentary_tokens": 1667,
+      "stanza_count": 12,
+      "meters": {
+        "11'li hece": 2
+      },
+      "page_start": 89,
+      "page_end": 100,
+      "birth_year": 1780,
+      "century": "18. yy",
+      "era": "Geç Dönem"
+    },
+    {
+      "name": "Sâdık Baba",
+      "poem_count": 2,
+      "total_tokens": 371,
+      "commentary_count": 45,
+      "commentary_tokens": 1643,
+      "stanza_count": 20,
+      "meters": {
+        "11'li hece": 2
+      },
+      "page_start": 385,
+      "page_end": 396,
+      "birth_year": 1771,
+      "century": "18. yy",
+      "era": "Geç Dönem"
+    },
+    {
+      "name": "Yunus Emre",
+      "poem_count": 2,
+      "total_tokens": 208,
+      "commentary_count": 34,
+      "commentary_tokens": 1640,
+      "stanza_count": 17,
+      "meters": {
+        "8'li hece": 1,
+        "7'li hece": 1
+      },
+      "page_start": 23,
+      "page_end": 34,
+      "birth_year": 1240,
+      "century": "13. yy",
+      "era": "Kurucu Dönem"
+    },
+    {
+      "name": "Dertli Divani (Veli Aykut)",
+      "poem_count": 2,
+      "total_tokens": 311,
+      "commentary_count": 29,
+      "commentary_tokens": 1636,
+      "stanza_count": 23,
+      "meters": {},
+      "page_start": 383,
+      "page_end": 396,
+      "birth_year": 1962,
+      "century": "20. yy",
+      "era": "Modern Dönem"
+    },
+    {
+      "name": "Kul Nesîmî",
+      "poem_count": 2,
+      "total_tokens": 286,
+      "commentary_count": 27,
+      "commentary_tokens": 1507,
+      "stanza_count": 16,
+      "meters": {
+        "11'li hece": 2
+      },
+      "page_start": 331,
+      "page_end": 342,
+      "birth_year": 1620,
+      "century": "17. yy",
+      "era": "Klasik Dönem"
+    },
+    {
+      "name": "Derviş Muhammed",
+      "poem_count": 1,
+      "total_tokens": 375,
+      "commentary_count": 23,
+      "commentary_tokens": 1505,
+      "stanza_count": 21,
+      "meters": {
+        "11'li hece": 1
+      },
+      "page_start": 355,
+      "page_end": 364,
+      "birth_year": 1750,
+      "century": "18. yy",
+      "era": "Geç Dönem"
+    },
+    {
+      "name": "Genç Abdal",
+      "poem_count": 2,
+      "total_tokens": 369,
+      "commentary_count": 39,
+      "commentary_tokens": 1374,
+      "stanza_count": 21,
+      "meters": {
+        "11'li hece": 2
+      },
+      "page_start": 57,
+      "page_end": 68,
+      "birth_year": 1850,
+      "century": "19. yy",
+      "era": "Geç Dönem"
+    },
+    {
+      "name": "Hüdai (Sabri Orak)",
+      "poem_count": 2,
+      "total_tokens": 216,
+      "commentary_count": 21,
+      "commentary_tokens": 1318,
+      "stanza_count": 14,
+      "meters": {
+        "8'li hece": 1,
+        "11'li hece": 1
+      },
+      "page_start": 335,
+      "page_end": 344,
+      "birth_year": 1940,
+      "century": "20. yy",
+      "era": "Modern Dönem"
+    },
+    {
+      "name": "Âşıki (Âşıki Ahmet)",
+      "poem_count": 1,
+      "total_tokens": 399,
+      "commentary_count": 43,
+      "commentary_tokens": 1418,
+      "stanza_count": 23,
+      "meters": {
+        "11'li hece": 1
+      },
+      "page_start": 371,
+      "page_end": 382,
+      "birth_year": 1800,
+      "century": "19. yy",
+      "era": "Geç Dönem"
+    },
+    {
+      "name": "Mahzuni Şerif (Şerif Cırık)",
+      "poem_count": 1,
+      "total_tokens": 159,
+      "commentary_count": 31,
+      "commentary_tokens": 1410,
+      "stanza_count": 11,
+      "meters": {
+        "8'li hece": 1
+      },
+      "page_start": 345,
+      "page_end": 356,
+      "birth_year": 1939,
+      "century": "20. yy",
+      "era": "Modern Dönem"
+    },
+    {
+      "name": "Bircan (Bircan Kayacan)",
+      "poem_count": 1,
+      "total_tokens": 426,
+      "commentary_count": 24,
+      "commentary_tokens": 1398,
+      "stanza_count": 20,
+      "meters": {
+        "11'li hece": 1
+      },
+      "page_start": 333,
+      "page_end": 342,
+      "birth_year": 1995,
+      "century": "20. yy",
+      "era": "Modern Dönem"
+    },
+    {
+      "name": "Turâbî",
+      "poem_count": 2,
+      "total_tokens": 298,
+      "commentary_count": 26,
+      "commentary_tokens": 1270,
+      "stanza_count": 18,
+      "meters": {
+        "11'li hece": 2
+      },
+      "page_start": 29,
+      "page_end": 40,
+      "birth_year": 1800,
+      "century": "19. yy",
+      "era": "Geç Dönem"
+    },
+    {
+      "name": "Âgâhî",
+      "poem_count": 1,
+      "total_tokens": 355,
+      "commentary_count": 24,
+      "commentary_tokens": 1260,
+      "stanza_count": 18,
+      "meters": {
+        "8'li hece": 1
+      },
+      "page_start": 203,
+      "page_end": 212,
+      "birth_year": 1874,
+      "century": "19. yy",
+      "era": "Geç Dönem"
+    },
+    {
+      "name": "Feyzi (Feyzullah Çelebi)",
+      "poem_count": 1,
+      "total_tokens": 496,
+      "commentary_count": 34,
+      "commentary_tokens": 1185,
+      "stanza_count": 33,
+      "meters": {
+        "8'li hece": 1
+      },
+      "page_start": 383,
+      "page_end": 396,
+      "birth_year": 1830,
+      "century": "19. yy",
+      "era": "Geç Dönem"
+    },
+    {
+      "name": "İpek Mehmet (Mehmet İpek)",
+      "poem_count": 1,
+      "total_tokens": 49,
+      "commentary_count": 8,
+      "commentary_tokens": 1165,
+      "stanza_count": 3,
+      "meters": {
+        "11'li hece": 1
+      },
+      "page_start": 403,
+      "page_end": 413,
+      "birth_year": 1964,
+      "century": "20. yy",
+      "era": "Modern Dönem"
+    },
+    {
+      "name": "Düşküni (Tansu Kadakoğlu)",
+      "poem_count": 1,
+      "total_tokens": 115,
+      "commentary_count": 10,
+      "commentary_tokens": 1141,
+      "stanza_count": 7,
+      "meters": {},
+      "page_start": 309,
+      "page_end": 316,
+      "birth_year": 1993,
+      "century": "20. yy",
+      "era": "Modern Dönem"
+    },
+    {
+      "name": "Er Yıldırım (Mesut Yıldırım)",
+      "poem_count": 1,
+      "total_tokens": 207,
+      "commentary_count": 35,
+      "commentary_tokens": 1015,
+      "stanza_count": 13,
+      "meters": {
+        "8'li hece": 1
+      },
+      "page_start": 193,
+      "page_end": 202,
+      "birth_year": 1985,
+      "century": "20. yy",
+      "era": "Modern Dönem"
+    },
+    {
+      "name": "Vatani (Ali Onar)",
+      "poem_count": 1,
+      "total_tokens": 291,
+      "commentary_count": 24,
+      "commentary_tokens": 967,
+      "stanza_count": 17,
+      "meters": {
+        "11'li hece": 1
+      },
+      "page_start": 275,
+      "page_end": 284,
+      "birth_year": 1990,
+      "century": "20. yy",
+      "era": "Modern Dönem"
+    },
+    {
+      "name": "Mehmet Muhyiddin",
+      "poem_count": 1,
+      "total_tokens": 121,
+      "commentary_count": 37,
+      "commentary_tokens": 935,
+      "stanza_count": 10,
+      "meters": {
+        "8'li hece": 1
+      },
+      "page_start": 297,
+      "page_end": 304,
+      "birth_year": 1550,
+      "century": "16. yy",
+      "era": "Klasik Dönem"
+    },
+    {
+      "name": "Çağla (Çağla Karasu)",
+      "poem_count": 1,
+      "total_tokens": 119,
+      "commentary_count": 12,
+      "commentary_tokens": 914,
+      "stanza_count": 6,
+      "meters": {
+        "11'li hece": 1
+      },
+      "page_start": 343,
+      "page_end": 348,
+      "birth_year": 1997,
+      "century": "20. yy",
+      "era": "Modern Dönem"
+    },
+    {
+      "name": "Yoloğlu (Berk Yoloğlu)",
+      "poem_count": 1,
+      "total_tokens": 115,
+      "commentary_count": 16,
+      "commentary_tokens": 902,
+      "stanza_count": 7,
+      "meters": {
+        "11'li hece": 1
+      },
+      "page_start": 325,
+      "page_end": 332,
+      "birth_year": 1995,
+      "century": "20. yy",
+      "era": "Modern Dönem"
+    },
+    {
+      "name": "Fedâyî",
+      "poem_count": 1,
+      "total_tokens": 296,
+      "commentary_count": 18,
+      "commentary_tokens": 874,
+      "stanza_count": 16,
+      "meters": {
+        "11'li hece": 1
+      },
+      "page_start": 147,
+      "page_end": 154,
+      "birth_year": 1790,
+      "century": "18. yy",
+      "era": "Geç Dönem"
+    },
+    {
+      "name": "Kul Himmet",
+      "poem_count": 1,
+      "total_tokens": 131,
+      "commentary_count": 27,
+      "commentary_tokens": 863,
+      "stanza_count": 9,
+      "meters": {},
+      "page_start": 253,
+      "page_end": 260,
+      "birth_year": 1550,
+      "century": "16. yy",
+      "era": "Klasik Dönem"
+    },
+    {
+      "name": "Kul Pervane (Suat Olcay)",
+      "poem_count": 1,
+      "total_tokens": 218,
+      "commentary_count": 25,
+      "commentary_tokens": 848,
+      "stanza_count": 12,
+      "meters": {
+        "11'li hece": 1
+      },
+      "page_start": 285,
+      "page_end": 292,
+      "birth_year": 1993,
+      "century": "20. yy",
+      "era": "Modern Dönem"
+    },
+    {
+      "name": "Güzide Ana",
+      "poem_count": 1,
+      "total_tokens": 184,
+      "commentary_count": 25,
+      "commentary_tokens": 843,
+      "stanza_count": 12,
+      "meters": {
+        "11'li hece": 1
+      },
+      "page_start": 373,
+      "page_end": 378,
+      "birth_year": 1720,
+      "century": "18. yy",
+      "era": "Geç Dönem"
+    },
+    {
+      "name": "Kul Veli",
+      "poem_count": 1,
+      "total_tokens": 106,
+      "commentary_count": 15,
+      "commentary_tokens": 836,
+      "stanza_count": 7,
+      "meters": {
+        "11'li hece": 1
+      },
+      "page_start": 41,
+      "page_end": 48,
+      "birth_year": 1793,
+      "century": "18. yy",
+      "era": "Geç Dönem"
+    },
+    {
+      "name": "Pir Mehmed",
+      "poem_count": 1,
+      "total_tokens": 150,
+      "commentary_count": 17,
+      "commentary_tokens": 825,
+      "stanza_count": 10,
+      "meters": {
+        "8'li hece": 1
+      },
+      "page_start": 365,
+      "page_end": 372,
+      "birth_year": 1840,
+      "century": "19. yy",
+      "era": "Geç Dönem"
+    },
+    {
+      "name": "Abdal Musa",
+      "poem_count": 1,
+      "total_tokens": 162,
+      "commentary_count": 23,
+      "commentary_tokens": 819,
+      "stanza_count": 9,
+      "meters": {
+        "11'li hece": 1
+      },
+      "page_start": 35,
+      "page_end": 40,
+      "birth_year": 1300,
+      "century": "14. yy",
+      "era": "Kurucu Dönem"
+    },
+    {
+      "name": "Gözcü (Kazım Yıldırım)",
+      "poem_count": 1,
+      "total_tokens": 277,
+      "commentary_count": 11,
+      "commentary_tokens": 819,
+      "stanza_count": 13,
+      "meters": {
+        "11'li hece": 1
+      },
+      "page_start": 253,
+      "page_end": 260,
+      "birth_year": 1983,
+      "century": "20. yy",
+      "era": "Modern Dönem"
+    },
+    {
+      "name": "Derman Bacı (Yaprak Kesici)",
+      "poem_count": 1,
+      "total_tokens": 166,
+      "commentary_count": 10,
+      "commentary_tokens": 770,
+      "stanza_count": 11,
+      "meters": {
+        "11'li hece": 1
+      },
+      "page_start": 317,
+      "page_end": 324,
+      "birth_year": 1995,
+      "century": "20. yy",
+      "era": "Modern Dönem"
+    },
+    {
+      "name": "Derviş Ali",
+      "poem_count": 1,
+      "total_tokens": 211,
+      "commentary_count": 14,
+      "commentary_tokens": 728,
+      "stanza_count": 13,
+      "meters": {
+        "11'li hece": 1
+      },
+      "page_start": 133,
+      "page_end": 140,
+      "birth_year": 1860,
+      "century": "19. yy",
+      "era": "Geç Dönem"
+    },
+    {
+      "name": "Muhlis Akarsu",
+      "poem_count": 1,
+      "total_tokens": 107,
+      "commentary_count": 15,
+      "commentary_tokens": 726,
+      "stanza_count": 6,
+      "meters": {
+        "11'li hece": 1
+      },
+      "page_start": 377,
+      "page_end": 382,
+      "birth_year": 1948,
+      "century": "20. yy",
+      "era": "Modern Dönem"
+    },
+    {
+      "name": "Dedemoğlu",
+      "poem_count": 2,
+      "total_tokens": 197,
+      "commentary_count": 10,
+      "commentary_tokens": 623,
+      "stanza_count": 12,
+      "meters": {
+        "11'li hece": 1
+      },
+      "page_start": 343,
+      "page_end": 348,
+      "birth_year": 1690,
+      "century": "17. yy",
+      "era": "Klasik Dönem"
+    },
+    {
+      "name": "Seyrânî",
+      "poem_count": 1,
+      "total_tokens": 133,
+      "commentary_count": 15,
+      "commentary_tokens": 722,
+      "stanza_count": 8,
+      "meters": {
+        "11'li hece": 1
+      },
+      "page_start": 49,
+      "page_end": 56,
+      "birth_year": 1807,
+      "century": "19. yy",
+      "era": "Geç Dönem"
+    },
+    {
+      "name": "Erbabi (Arif Çubuk)",
+      "poem_count": 1,
+      "total_tokens": 206,
+      "commentary_count": 15,
+      "commentary_tokens": 719,
+      "stanza_count": 12,
+      "meters": {
+        "11'li hece": 1
+      },
+      "page_start": 369,
+      "page_end": 376,
+      "birth_year": 1946,
+      "century": "20. yy",
+      "era": "Modern Dönem"
+    },
+    {
+      "name": "Can Yunus (Yunus Emrah Şahin)",
+      "poem_count": 1,
+      "total_tokens": 179,
+      "commentary_count": 18,
+      "commentary_tokens": 715,
+      "stanza_count": 11,
+      "meters": {
+        "11'li hece": 1
+      },
+      "page_start": 267,
+      "page_end": 274,
+      "birth_year": 1985,
+      "century": "20. yy",
+      "era": "Modern Dönem"
+    },
+    {
+      "name": "Hasan Dede",
+      "poem_count": 1,
+      "total_tokens": 159,
+      "commentary_count": 21,
+      "commentary_tokens": 709,
+      "stanza_count": 13,
+      "meters": {
+        "8'li hece": 1
+      },
+      "page_start": 261,
+      "page_end": 268,
+      "birth_year": 1475,
+      "century": "15. yy",
+      "era": "Kurucu Dönem"
+    },
+    {
+      "name": "Davut Sulari (Davut Ağbaba)",
+      "poem_count": 1,
+      "total_tokens": 108,
+      "commentary_count": 18,
+      "commentary_tokens": 706,
+      "stanza_count": 7,
+      "meters": {
+        "11'li hece": 1
+      },
+      "page_start": 267,
+      "page_end": 272,
+      "birth_year": 1925,
+      "century": "20. yy",
+      "era": "Modern Dönem"
+    },
+    {
+      "name": "Âşıkî",
+      "poem_count": 1,
+      "total_tokens": 165,
+      "commentary_count": 14,
+      "commentary_tokens": 692,
+      "stanza_count": 9,
+      "meters": {
+        "11'li hece": 1
+      },
+      "page_start": 141,
+      "page_end": 146,
+      "birth_year": 1765,
+      "century": "18. yy",
+      "era": "Geç Dönem"
+    },
+    {
+      "name": "Sâdıkî",
+      "poem_count": 1,
+      "total_tokens": 144,
+      "commentary_count": 22,
+      "commentary_tokens": 651,
+      "stanza_count": 9,
+      "meters": {
+        "11'li hece": 1
+      },
+      "page_start": 349,
+      "page_end": 354,
+      "birth_year": 1680,
+      "century": "17. yy",
+      "era": "Klasik Dönem"
+    },
+    {
+      "name": "Neşet Ertaş",
+      "poem_count": 1,
+      "total_tokens": 127,
+      "commentary_count": 15,
+      "commentary_tokens": 641,
+      "stanza_count": 7,
+      "meters": {
+        "11'li hece": 1
+      },
+      "page_start": 329,
+      "page_end": 334,
+      "birth_year": 1938,
+      "century": "20. yy",
+      "era": "Modern Dönem"
+    },
+    {
+      "name": "Er Mustafa",
+      "poem_count": 1,
+      "total_tokens": 148,
+      "commentary_count": 14,
+      "commentary_tokens": 638,
+      "stanza_count": 9,
+      "meters": {
+        "11'li hece": 1
+      },
+      "page_start": 379,
+      "page_end": 384,
+      "birth_year": 1780,
+      "century": "18. yy",
+      "era": "Geç Dönem"
+    },
+    {
+      "name": "Perişan Ali (Ali İspir)",
+      "poem_count": 1,
+      "total_tokens": 86,
+      "commentary_count": 16,
+      "commentary_tokens": 623,
+      "stanza_count": 5,
+      "meters": {
+        "11'li hece": 1
+      },
+      "page_start": 363,
+      "page_end": 368,
+      "birth_year": 1944,
+      "century": "20. yy",
+      "era": "Modern Dönem"
+    },
+    {
+      "name": "Nimri Dede (İsmail Dehmen)",
+      "poem_count": 1,
+      "total_tokens": 138,
+      "commentary_count": 12,
+      "commentary_tokens": 620,
+      "stanza_count": 8,
+      "meters": {
+        "11'li hece": 1
+      },
+      "page_start": 253,
+      "page_end": 260,
+      "birth_year": 1909,
+      "century": "20. yy",
+      "era": "Modern Dönem"
+    },
+    {
+      "name": "İbreti (Hıdır Gürel)",
+      "poem_count": 1,
+      "total_tokens": 117,
+      "commentary_count": 12,
+      "commentary_tokens": 593,
+      "stanza_count": 7,
+      "meters": {},
+      "page_start": 261,
+      "page_end": 266,
+      "birth_year": 1920,
+      "century": "20. yy",
+      "era": "Modern Dönem"
+    },
+    {
+      "name": "Mücrimî",
+      "poem_count": 1,
+      "total_tokens": 129,
+      "commentary_count": 15,
+      "commentary_tokens": 563,
+      "stanza_count": 8,
+      "meters": {
+        "11'li hece": 1
+      },
+      "page_start": 213,
+      "page_end": 218,
+      "birth_year": 1882,
+      "century": "19. yy",
+      "era": "Geç Dönem"
+    },
+    {
+      "name": "Eroğlu (Yılmaz Doğan)",
+      "poem_count": 1,
+      "total_tokens": 80,
+      "commentary_count": 8,
+      "commentary_tokens": 530,
+      "stanza_count": 5,
+      "meters": {
+        "11'li hece": 1
+      },
+      "page_start": 261,
+      "page_end": 266,
+      "birth_year": 1983,
+      "century": "20. yy",
+      "era": "Modern Dönem"
+    },
+    {
+      "name": "Bülent (Bülent Akdağ)",
+      "poem_count": 1,
+      "total_tokens": 95,
+      "commentary_count": 10,
+      "commentary_tokens": 459,
+      "stanza_count": 6,
+      "meters": {},
+      "page_start": 229,
+      "page_end": 236,
+      "birth_year": 1978,
+      "century": "20. yy",
+      "era": "Modern Dönem"
+    },
+    {
+      "name": "Melulî (Karaca Erbil)",
+      "poem_count": 1,
+      "total_tokens": 118,
+      "commentary_count": 11,
+      "commentary_tokens": 456,
+      "stanza_count": 8,
+      "meters": {},
+      "page_start": 219,
+      "page_end": 224,
+      "birth_year": 1892,
+      "century": "19. yy",
+      "era": "Geç Dönem"
+    },
+    {
+      "name": "Âşık Dertli",
+      "poem_count": 1,
+      "total_tokens": 158,
+      "commentary_count": 13,
+      "commentary_tokens": 417,
+      "stanza_count": 10,
+      "meters": {
+        "11'li hece": 1
+      },
+      "page_start": 23,
+      "page_end": 28,
+      "birth_year": 1772,
+      "century": "18. yy",
+      "era": "Geç Dönem"
+    },
+    {
+      "name": "Sadık Miskini (Sait Küçük)",
+      "poem_count": 1,
+      "total_tokens": 68,
+      "commentary_count": 10,
+      "commentary_tokens": 398,
+      "stanza_count": 7,
+      "meters": {
+        "7'li hece": 1
+      },
+      "page_start": 397,
+      "page_end": 402,
+      "birth_year": 1964,
+      "century": "20. yy",
+      "era": "Modern Dönem"
+    },
+    {
+      "name": "Ali Cemali (Ali Çetinkaya)",
+      "poem_count": 1,
+      "total_tokens": 92,
+      "commentary_count": 14,
+      "commentary_tokens": 387,
+      "stanza_count": 6,
+      "meters": {
+        "11'li hece": 1
+      },
+      "page_start": 357,
+      "page_end": 362,
+      "birth_year": 1941,
+      "century": "20. yy",
+      "era": "Modern Dönem"
+    },
+    {
+      "name": "Nesimi Çimen",
+      "poem_count": 1,
+      "total_tokens": 75,
+      "commentary_count": 16,
+      "commentary_tokens": 335,
+      "stanza_count": 6,
+      "meters": {
+        "8'li hece": 1
+      },
+      "page_start": 305,
+      "page_end": 310,
+      "birth_year": 1931,
+      "century": "20. yy",
+      "era": "Modern Dönem"
+    }
+  ],
+  "poems": [
+    {
+      "poet": "Yunus Emre",
+      "title": "1. Yunus Emre: Bir Kez Gönül Yıktın İse",
+      "poem_number": 1,
+      "meter": "8'li hece",
+      "token_count": 122,
+      "stanza_count": 8,
+      "page_start": 25,
+      "page_end": 28
+    },
+    {
+      "poet": "Yunus Emre",
+      "title": "2. Yunus Emre: İlim İlim Bilmektir",
+      "poem_number": 2,
+      "meter": "7'li hece",
+      "token_count": 86,
+      "stanza_count": 9,
+      "page_start": 29,
+      "page_end": 34
+    },
+    {
+      "poet": "Abdal Musa",
+      "title": "3. Abdal Musa: Muhammet Ali’nin Kıldığı Dava",
+      "poem_number": 3,
+      "meter": "11'li hece",
+      "token_count": 162,
+      "stanza_count": 9,
+      "page_start": 36,
+      "page_end": 40
+    },
+    {
+      "poet": "Kaygusuz Abdal",
+      "title": "4. Kaygusuz Abdal: Bu Âdem Dedikleri",
+      "poem_number": 4,
+      "meter": "7'li hece",
+      "token_count": 139,
+      "stanza_count": 11,
+      "page_start": 42,
+      "page_end": 47
+    },
+    {
+      "poet": "Kaygusuz Abdal",
+      "title": "5. Kaygusuz Abdal: Evliyadan Gelen Kelam",
+      "poem_number": 5,
+      "meter": "8'li hece",
+      "token_count": 139,
+      "stanza_count": 9,
+      "page_start": 48,
+      "page_end": 54
+    },
+    {
+      "poet": "Seyyid Nesîmî",
+      "title": "6. Seyyid Nesîmî: Mende Sığar Bu Cihan Men Bu Cihana",
+      "poem_number": 6,
+      "meter": "11'li hece",
+      "token_count": 507,
+      "stanza_count": 22,
+      "page_start": 57,
+      "page_end": 71
+    },
+    {
+      "poet": "Seyyid Nesîmî",
+      "title": "7. Nesîmî: Ateş-i Aşkına Yaktın Özümü",
+      "poem_number": 7,
+      "meter": "11'li hece",
+      "token_count": 181,
+      "stanza_count": 12,
+      "page_start": 72,
+      "page_end": 78
+    },
+    {
+      "poet": "Şah Hatayi",
+      "title": "8. Şah Hatayi: Gel Ali Yoluna Belî Desene",
+      "poem_number": 8,
+      "meter": "11'li hece",
+      "token_count": 147,
+      "stanza_count": 8,
+      "page_start": 81,
+      "page_end": 85
+    },
+    {
+      "poet": "Şah Hatayi",
+      "title": "9. Şah Hatayi: Hü Diyelim Gerçeklerin Demine",
+      "poem_number": 9,
+      "meter": "11'li hece",
+      "token_count": 136,
+      "stanza_count": 8,
+      "page_start": 86,
+      "page_end": 89
+    },
+    {
+      "poet": "Şah Hatayi",
+      "title": "10. Şah Hatayi: Bu Yolun Yolcusu Olayım Dersen",
+      "poem_number": 10,
+      "meter": "11'li hece",
+      "token_count": 112,
+      "stanza_count": 7,
+      "page_start": 90,
+      "page_end": 95
+    },
+    {
+      "poet": "Şah Hatayi",
+      "title": "11. Şah Hatayi: Gel Gönül Pirlerin Nasihatini",
+      "poem_number": 11,
+      "meter": "11'li hece",
+      "token_count": 84,
+      "stanza_count": 5,
+      "page_start": 96,
+      "page_end": 98
+    },
+    {
+      "poet": "Şah Hatayi",
+      "title": "12. Şah Hatayi: Benim Pirim Şahı Merdan Ali’dir",
+      "poem_number": 12,
+      "meter": "11'li hece",
+      "token_count": 101,
+      "stanza_count": 6,
+      "page_start": 99,
+      "page_end": 101
+    },
+    {
+      "poet": "Şah Hatayi",
+      "title": "13. Şah Hatayi: Sultan Süleyman’a Kalmayan Hanlar",
+      "poem_number": 13,
+      "meter": "11'li hece",
+      "token_count": 227,
+      "stanza_count": 10,
+      "page_start": 102,
+      "page_end": 105
+    },
+    {
+      "poet": "Şah Hatayi",
+      "title": "14. Şah Hatayi: Bir Güzelin Vücudunun Şehrine",
+      "poem_number": 14,
+      "meter": "11'li hece",
+      "token_count": 197,
+      "stanza_count": 10,
+      "page_start": 106,
+      "page_end": 110
+    },
+    {
+      "poet": "Şah Hatayi",
+      "title": "15. Şah Hatayi: Ali’nin Sırrına Ereyim Dersen",
+      "poem_number": 15,
+      "meter": "11'li hece",
+      "token_count": 149,
+      "stanza_count": 9,
+      "page_start": 111,
+      "page_end": 115
+    },
+    {
+      "poet": "Şah Hatayi",
+      "title": "16. Şah Hatayi: Diz Çöküben Zikredelim",
+      "poem_number": 16,
+      "meter": "8'li hece",
+      "token_count": 101,
+      "stanza_count": 9,
+      "page_start": 116,
+      "page_end": 119
+    },
+    {
+      "poet": "Şah Hatayi",
+      "title": "17. Şah Hatayi: Bir Nefescik Söyleyeyim",
+      "poem_number": 17,
+      "meter": "8'li hece",
+      "token_count": 70,
+      "stanza_count": 7,
+      "page_start": 120,
+      "page_end": 124
+    },
+    {
+      "poet": "Şah Hatayi",
+      "title": "18. Şah Hatayi: Kırklar Meydanına Vardım",
+      "poem_number": 18,
+      "meter": "8'li hece",
+      "token_count": 101,
+      "stanza_count": 7,
+      "page_start": 125,
+      "page_end": 128
+    },
+    {
+      "poet": "Şah Hatayi",
+      "title": "19. Şah Hatayi: Gönül Ne Gezersin Seyran Yerinde",
+      "poem_number": 19,
+      "meter": "11'li hece",
+      "token_count": 86,
+      "stanza_count": 5,
+      "page_start": 129,
+      "page_end": 132
+    },
+    {
+      "poet": "Şah Hatayi",
+      "title": "20. Şah Hatayi: Muhammed’i Candan Sev ki",
+      "poem_number": 20,
+      "meter": "8'li hece",
+      "token_count": 181,
+      "stanza_count": 11,
+      "page_start": 133,
+      "page_end": 140
+    },
+    {
+      "poet": "Şah Hatayi",
+      "title": "21. Şah Hatayi: Bugün Bize Pir Geldi",
+      "poem_number": 21,
+      "meter": "7'li hece",
+      "token_count": 278,
+      "stanza_count": 26,
+      "page_start": 141,
+      "page_end": 154
+    },
+    {
+      "poet": "Şah Hatayi",
+      "title": "22. Şah Hatayi: Şu Âleme Bir Nur Doğdu",
+      "poem_number": 22,
+      "meter": "8'li hece",
+      "token_count": 173,
+      "stanza_count": 11,
+      "page_start": 155,
+      "page_end": 161
+    },
+    {
+      "poet": "Şah Hatayi",
+      "title": "23. Şah Hatayi: Erenler Şemile Pervane Geldim",
+      "poem_number": 23,
+      "meter": null,
+      "token_count": 300,
+      "stanza_count": 15,
+      "page_start": 162,
+      "page_end": 168
+    },
+    {
+      "poet": "Şah Hatayi",
+      "title": "24. Şah Hatayi: Bugün Matem Günü Geldi",
+      "poem_number": 24,
+      "meter": "8'li hece",
+      "token_count": 96,
+      "stanza_count": 7,
+      "page_start": 169,
+      "page_end": 172
+    },
+    {
+      "poet": "Şah Hatayi",
+      "title": "25. Şah Hatayi: Muhabbet Bağında Bir Gül Açıldı",
+      "poem_number": 25,
+      "meter": "11'li hece",
+      "token_count": 121,
+      "stanza_count": 7,
+      "page_start": 173,
+      "page_end": 176
+    },
+    {
+      "poet": "Şah Hatayi",
+      "title": "26. Şah Hatayi: Her Kim Şeyh Safi’nin Emrini Tutmaz",
+      "poem_number": 26,
+      "meter": null,
+      "token_count": 73,
+      "stanza_count": 6,
+      "page_start": 177,
+      "page_end": 180
+    },
+    {
+      "poet": "Pir Sultan Abdal",
+      "title": "27. Pir Sultan Abdal: Benden Selam Söyle O Güzel Şah’a",
+      "poem_number": 27,
+      "meter": null,
+      "token_count": 109,
+      "stanza_count": 7,
+      "page_start": 183,
+      "page_end": 186
+    },
+    {
+      "poet": "Pir Sultan Abdal",
+      "title": "28. Pir Sultan Abdal: Uyur İdik Uyardılar",
+      "poem_number": 28,
+      "meter": "8'li hece",
+      "token_count": 85,
+      "stanza_count": 7,
+      "page_start": 187,
+      "page_end": 190
+    },
+    {
+      "poet": "Pir Sultan Abdal",
+      "title": "29. Pir Sultan Abdal: Mescidim Mihrabım Üstat Eşiği",
+      "poem_number": 29,
+      "meter": "11'li hece",
+      "token_count": 150,
+      "stanza_count": 9,
+      "page_start": 191,
+      "page_end": 196
+    },
+    {
+      "poet": "Pir Sultan Abdal",
+      "title": "30. Pir Sultan Abdal: Önüme Bir Çığır Geldi",
+      "poem_number": 30,
+      "meter": "8'li hece",
+      "token_count": 267,
+      "stanza_count": 14,
+      "page_start": 197,
+      "page_end": 203
+    },
+    {
+      "poet": "Pir Sultan Abdal",
+      "title": "31. Pir Sultan Abdal: Enel Hak Dedim de Çekildim",
+      "poem_number": 31,
+      "meter": "11'li hece",
+      "token_count": 127,
+      "stanza_count": 7,
+      "page_start": 204,
+      "page_end": 208
+    },
+    {
+      "poet": "Pir Sultan Abdal",
+      "title": "32. Pir Sultan Abdal: Kalktı Havalandı Gönlümün",
+      "poem_number": 32,
+      "meter": "11'li hece",
+      "token_count": 131,
+      "stanza_count": 8,
+      "page_start": 209,
+      "page_end": 212
+    },
+    {
+      "poet": "Pir Sultan Abdal",
+      "title": "33. Pir Sultan Abdal: Turap Olup Düştüm Toza",
+      "poem_number": 33,
+      "meter": "8'li hece",
+      "token_count": 54,
+      "stanza_count": 4,
+      "page_start": 213,
+      "page_end": 215
+    },
+    {
+      "poet": "Pir Sultan Abdal",
+      "title": "34. Pir Sultan Abdal: Temennaya Geldim Erenler Size",
+      "poem_number": 34,
+      "meter": "11'li hece",
+      "token_count": 106,
+      "stanza_count": 8,
+      "page_start": 216,
+      "page_end": 220
+    },
+    {
+      "poet": "Pir Sultan Abdal",
+      "title": "35. Pir Sultan Abdal: Kur’an Yazılırken Arş-ı Rah-",
+      "poem_number": 35,
+      "meter": "11'li hece",
+      "token_count": 148,
+      "stanza_count": 9,
+      "page_start": 221,
+      "page_end": 226
+    },
+    {
+      "poet": "Pir Sultan Abdal",
+      "title": "36. Pir Sultan Abdal: Ben Dervişim Dersin Göğsün Gerersin",
+      "poem_number": 36,
+      "meter": "11'li hece",
+      "token_count": 145,
+      "stanza_count": 8,
+      "page_start": 227,
+      "page_end": 231
+    },
+    {
+      "poet": "Pir Sultan Abdal",
+      "title": "37. Pir Sultan Abdal: Güzel Âşık Cevrimizi",
+      "poem_number": 37,
+      "meter": "8'li hece",
+      "token_count": 96,
+      "stanza_count": 7,
+      "page_start": 232,
+      "page_end": 237
+    },
+    {
+      "poet": "Pir Sultan Abdal",
+      "title": "38. Pir Sultan Abdal: Benim Sevdiğimin Şirin Sözleri",
+      "poem_number": 38,
+      "meter": "11'li hece",
+      "token_count": 139,
+      "stanza_count": 9,
+      "page_start": 238,
+      "page_end": 243
+    },
+    {
+      "poet": "Pir Sultan Abdal",
+      "title": "39. Pir Sultan Abdal: Ali Ali Deyü Ne İnilersin",
+      "poem_number": 39,
+      "meter": "11'li hece",
+      "token_count": 109,
+      "stanza_count": 7,
+      "page_start": 244,
+      "page_end": 247
+    },
+    {
+      "poet": "Pir Sultan Abdal",
+      "title": "40. Pir Sultan Abdal: Mevla Çün Yarattı Ahmed’i Nur-",
+      "poem_number": 40,
+      "meter": "11'li hece",
+      "token_count": 136,
+      "stanza_count": 7,
+      "page_start": 248,
+      "page_end": 252
+    },
+    {
+      "poet": "Kul Himmet",
+      "title": "41. Kul Himmet: Muhammed’in Bahçesinde",
+      "poem_number": 41,
+      "meter": null,
+      "token_count": 131,
+      "stanza_count": 9,
+      "page_start": 254,
+      "page_end": 260
+    },
+    {
+      "poet": "Hasan Dede",
+      "title": "42. Hasan Dede: Eşrefoğlu Al Haberi",
+      "poem_number": 42,
+      "meter": "8'li hece",
+      "token_count": 159,
+      "stanza_count": 13,
+      "page_start": 262,
+      "page_end": 268
+    },
+    {
+      "poet": "Virânî",
+      "title": "43. Virânî: Gafil Olma Cümle Cihan Bir Vücud",
+      "poem_number": 43,
+      "meter": "11'li hece",
+      "token_count": 229,
+      "stanza_count": 13,
+      "page_start": 271,
+      "page_end": 276
+    },
+    {
+      "poet": "Virânî",
+      "title": "44. Virânî: Elif’i Mim’den Aldık Sırr-ı Kur’an’ı",
+      "poem_number": 44,
+      "meter": "11'li hece",
+      "token_count": 239,
+      "stanza_count": 20,
+      "page_start": 277,
+      "page_end": 284
+    },
+    {
+      "poet": "Virânî",
+      "title": "45. Virânî: Lamekân İlinden Geldim Cihana",
+      "poem_number": 45,
+      "meter": "11'li hece",
+      "token_count": 158,
+      "stanza_count": 10,
+      "page_start": 285,
+      "page_end": 290
+    },
+    {
+      "poet": "Virânî",
+      "title": "46. Virânî: Güzel Cemalini Gördüm Beğendim",
+      "poem_number": 46,
+      "meter": "11'li hece",
+      "token_count": 158,
+      "stanza_count": 11,
+      "page_start": 291,
+      "page_end": 296
+    },
+    {
+      "poet": "Mehmet Muhyiddin",
+      "title": "47. Mehmet Muhyiddin: Zahid Bizi Tan Eyleme",
+      "poem_number": 47,
+      "meter": "8'li hece",
+      "token_count": 121,
+      "stanza_count": 10,
+      "page_start": 299,
+      "page_end": 304
+    },
+    {
+      "poet": "Teslim Abdal",
+      "title": "48. Teslim Abdal: Övmüş de Yaratmış Kendi Nurun-",
+      "poem_number": 48,
+      "meter": "11'li hece",
+      "token_count": 221,
+      "stanza_count": 15,
+      "page_start": 306,
+      "page_end": 311
+    },
+    {
+      "poet": "Teslim Abdal",
+      "title": "49. Teslim Abdal: İşte Geldim İşte Gittim",
+      "poem_number": 49,
+      "meter": "8'li hece",
+      "token_count": 171,
+      "stanza_count": 14,
+      "page_start": 312,
+      "page_end": 317
+    },
+    {
+      "poet": "Teslim Abdal",
+      "title": "50. Teslim Abdal: Üç Günlük Dünyada Hey Âdemoğlu",
+      "poem_number": 50,
+      "meter": "11'li hece",
+      "token_count": 296,
+      "stanza_count": 15,
+      "page_start": 318,
+      "page_end": 323
+    },
+    {
+      "poet": "Teslim Abdal",
+      "title": "51. Teslim Abdal: Mürşide Varmaya Talip Olursan",
+      "poem_number": 51,
+      "meter": null,
+      "token_count": 246,
+      "stanza_count": 16,
+      "page_start": 324,
+      "page_end": 330
+    },
+    {
+      "poet": "Kul Nesîmî",
+      "title": "52. Kul Nesîmî: Har İçinde Biten Gonca Güle Minnet Ey-",
+      "poem_number": 52,
+      "meter": "11'li hece",
+      "token_count": 155,
+      "stanza_count": 8,
+      "page_start": 332,
+      "page_end": 335
+    },
+    {
+      "poet": "Kul Nesîmî",
+      "title": "53. Kul Nesîmî: Sorma Be Birader Mezhebimizi",
+      "poem_number": 53,
+      "meter": "11'li hece",
+      "token_count": 131,
+      "stanza_count": 8,
+      "page_start": 336,
+      "page_end": 342
+    },
+    {
+      "poet": "Dedemoğlu",
+      "title": "54. Dedemoğlu: Beri Gel Beri Gel Ey Esrarı Hak",
+      "poem_number": 54,
+      "meter": "11'li hece",
+      "token_count": 159,
+      "stanza_count": 10,
+      "page_start": 343,
+      "page_end": 345
+    },
+    {
+      "poet": "Dedemoğlu",
+      "title": "1. İlmel Yakîn:",
+      "poem_number": 1,
+      "meter": null,
+      "token_count": 38,
+      "stanza_count": 2,
+      "page_start": 346,
+      "page_end": 348
+    },
+    {
+      "poet": "Sâdıkî",
+      "title": "55. Sâdıkî: Gönül Kelamını Kâmile Söyle",
+      "poem_number": 55,
+      "meter": "11'li hece",
+      "token_count": 144,
+      "stanza_count": 9,
+      "page_start": 349,
+      "page_end": 354
+    },
+    {
+      "poet": "Derviş Muhammed",
+      "title": "56. Derviş Muhammed: Gelin Hey Erenler Umudu Kes-",
+      "poem_number": 56,
+      "meter": "11'li hece",
+      "token_count": 375,
+      "stanza_count": 21,
+      "page_start": 355,
+      "page_end": 364
+    },
+    {
+      "poet": "Pir Mehmed",
+      "title": "57. Pir Mehmed: Kalmışsın Bir Kış İçinde",
+      "poem_number": 57,
+      "meter": "8'li hece",
+      "token_count": 150,
+      "stanza_count": 10,
+      "page_start": 366,
+      "page_end": 372
+    },
+    {
+      "poet": "Güzide Ana",
+      "title": "58. Güzide Ana: Gaziler Cihanın Müddeti Doldu",
+      "poem_number": 58,
+      "meter": "11'li hece",
+      "token_count": 184,
+      "stanza_count": 12,
+      "page_start": 373,
+      "page_end": 378
+    },
+    {
+      "poet": "Er Mustafa",
+      "title": "59. Er Mustafa: Ol İlm-i Hikmetten Haber Almayan",
+      "poem_number": 59,
+      "meter": "11'li hece",
+      "token_count": 148,
+      "stanza_count": 9,
+      "page_start": 379,
+      "page_end": 384
+    },
+    {
+      "poet": "Sâdık Baba",
+      "title": "60. Sâdık Baba: Anka Meydan Almaz, Dik Uçmayınan",
+      "poem_number": 60,
+      "meter": "11'li hece",
+      "token_count": 259,
+      "stanza_count": 13,
+      "page_start": 386,
+      "page_end": 391
+    },
+    {
+      "poet": "Sâdık Baba",
+      "title": "61. Sâdık Baba: Bir Adam Hakk’ın Emrini Bilmezse",
+      "poem_number": 61,
+      "meter": "11'li hece",
+      "token_count": 112,
+      "stanza_count": 7,
+      "page_start": 392,
+      "page_end": 396
+    },
+    {
+      "poet": "Âşık Dertli",
+      "title": "1. Âşık Dertli: Hitab-ı Elestte Bezm-i Ezelde",
+      "poem_number": 1,
+      "meter": "11'li hece",
+      "token_count": 158,
+      "stanza_count": 10,
+      "page_start": 24,
+      "page_end": 28
+    },
+    {
+      "poet": "Turâbî",
+      "title": "2. Turabi: Güruh-u Naci’ye Ereyim Dersen",
+      "poem_number": 2,
+      "meter": "11'li hece",
+      "token_count": 137,
+      "stanza_count": 9,
+      "page_start": 30,
+      "page_end": 33
+    },
+    {
+      "poet": "Turâbî",
+      "title": "3. Turâbî: Arşı Kürsü Kalem Almadan Düzler",
+      "poem_number": 3,
+      "meter": "11'li hece",
+      "token_count": 161,
+      "stanza_count": 9,
+      "page_start": 34,
+      "page_end": 40
+    },
+    {
+      "poet": "Kul Veli",
+      "title": "4. Kul Veli: Yüzüm Süre Süre Geldim Dergâha",
+      "poem_number": 4,
+      "meter": "11'li hece",
+      "token_count": 106,
+      "stanza_count": 7,
+      "page_start": 42,
+      "page_end": 48
+    },
+    {
+      "poet": "Seyrânî",
+      "title": "5. Seyrânî: İdris Terziliği İcat Etmeden",
+      "poem_number": 5,
+      "meter": "11'li hece",
+      "token_count": 133,
+      "stanza_count": 8,
+      "page_start": 50,
+      "page_end": 56
+    },
+    {
+      "poet": "Genç Abdal",
+      "title": "6. Genç Abdal: Gaflet Uykusunda Yatar Uyanmaz",
+      "poem_number": 6,
+      "meter": "11'li hece",
+      "token_count": 170,
+      "stanza_count": 10,
+      "page_start": 58,
+      "page_end": 62
+    },
+    {
+      "poet": "Genç Abdal",
+      "title": "7. Genç Abdal: Fırsat Elde İken Bir Amel Kazan",
+      "poem_number": 7,
+      "meter": "11'li hece",
+      "token_count": 199,
+      "stanza_count": 11,
+      "page_start": 63,
+      "page_end": 68
+    },
+    {
+      "poet": "Sefil Ali",
+      "title": "8. Sefil Ali: Ne Acayip Kulun Var Hey Kadir Allah",
+      "poem_number": 8,
+      "meter": "11'li hece",
+      "token_count": 102,
+      "stanza_count": 6,
+      "page_start": 70,
+      "page_end": 74
+    },
+    {
+      "poet": "Sefil Ali",
+      "title": "9. Sefil Ali: Gayriye Nazar Kılma Âdem’e Bak",
+      "poem_number": 9,
+      "meter": "11'li hece",
+      "token_count": 219,
+      "stanza_count": 13,
+      "page_start": 75,
+      "page_end": 78
+    },
+    {
+      "poet": "Sefil Ali",
+      "title": "10. Sefil Ali: Elhamdülillahi Kün Ha Vallahi",
+      "poem_number": 10,
+      "meter": "11'li hece",
+      "token_count": 283,
+      "stanza_count": 20,
+      "page_start": 79,
+      "page_end": 88
+    },
+    {
+      "poet": "Noksanî",
+      "title": "11. Noksanî: Bir Kâmile Candan Hizmet Eylesen",
+      "poem_number": 11,
+      "meter": "11'li hece",
+      "token_count": 108,
+      "stanza_count": 6,
+      "page_start": 89,
+      "page_end": 95
+    },
+    {
+      "poet": "Noksanî",
+      "title": "12. Noksanî: Gönlümün Ziyası Gözümün Nuru",
+      "poem_number": 12,
+      "meter": "11'li hece",
+      "token_count": 96,
+      "stanza_count": 6,
+      "page_start": 96,
+      "page_end": 100
+    },
+    {
+      "poet": "Harâbî",
+      "title": "13. Harâbî: Sana Nasihatim Var Eylen Yolcu",
+      "poem_number": 13,
+      "meter": "11'li hece",
+      "token_count": 103,
+      "stanza_count": 7,
+      "page_start": 102,
+      "page_end": 105
+    },
+    {
+      "poet": "Harâbî",
+      "title": "14. Harâbî: Vahdetname",
+      "poem_number": 14,
+      "meter": "11'li hece",
+      "token_count": 944,
+      "stanza_count": 54,
+      "page_start": 106,
+      "page_end": 132
+    },
+    {
+      "poet": "Derviş Ali",
+      "title": "15. Derviş Ali: Nefes Harceyleme Salma Araya",
+      "poem_number": 15,
+      "meter": "11'li hece",
+      "token_count": 211,
+      "stanza_count": 13,
+      "page_start": 134,
+      "page_end": 140
+    },
+    {
+      "poet": "Âşıkî",
+      "title": "16. Âşıkî: Hacıya Kâbe’ye Tavafa Gider",
+      "poem_number": 16,
+      "meter": "11'li hece",
+      "token_count": 165,
+      "stanza_count": 9,
+      "page_start": 142,
+      "page_end": 146
+    },
+    {
+      "poet": "Fedâyî",
+      "title": "17. Fedâyî: Tarikat Kutbunda Tecdid Olmayan",
+      "poem_number": 17,
+      "meter": "11'li hece",
+      "token_count": 296,
+      "stanza_count": 16,
+      "page_start": 148,
+      "page_end": 154
+    },
+    {
+      "poet": "Âşık Sıdkî (Zeynel Abidin)",
+      "title": "18. Âşık Sıdkî: Gel Beri Sır Verme Nadana Hara",
+      "poem_number": 18,
+      "meter": "11'li hece",
+      "token_count": 164,
+      "stanza_count": 8,
+      "page_start": 157,
+      "page_end": 161
+    },
+    {
+      "poet": "Âşık Sıdkî (Zeynel Abidin)",
+      "title": "19. Âşık Sıdkî: Çatılmadan Yerin Göğün Binası",
+      "poem_number": 19,
+      "meter": "11'li hece",
+      "token_count": 317,
+      "stanza_count": 19,
+      "page_start": 162,
+      "page_end": 170
+    },
+    {
+      "poet": "Kul Fakır Ali Derviş (Ali Oymak)",
+      "title": "20. Kul Fakır Ali Derviş: Her Neyi Ararsan Vardır Bu",
+      "poem_number": 20,
+      "meter": "11'li hece",
+      "token_count": 211,
+      "stanza_count": 13,
+      "page_start": 172,
+      "page_end": 178
+    },
+    {
+      "poet": "Kul Fakır Ali Derviş (Ali Oymak)",
+      "title": "21. Kul Fakır Ali Derviş: Zamane Halkının Yanına Varma",
+      "poem_number": 21,
+      "meter": "11'li hece",
+      "token_count": 268,
+      "stanza_count": 15,
+      "page_start": 179,
+      "page_end": 186
+    },
+    {
+      "poet": "Kul Fakır Ali Derviş (Ali Oymak)",
+      "title": "22. Kul Fakır Ali Derviş: Seyrimde Gezerken Üç Güzel",
+      "poem_number": 22,
+      "meter": "11'li hece",
+      "token_count": 143,
+      "stanza_count": 8,
+      "page_start": 187,
+      "page_end": 191
+    },
+    {
+      "poet": "Kul Fakır Ali Derviş (Ali Oymak)",
+      "title": "23. Kul Fakır Ali Derviş: Arif Olsam İlm-i Hikmet Söyle-",
+      "poem_number": 23,
+      "meter": "11'li hece",
+      "token_count": 117,
+      "stanza_count": 7,
+      "page_start": 192,
+      "page_end": 195
+    },
+    {
+      "poet": "Kul Fakır Ali Derviş (Ali Oymak)",
+      "title": "24. Kul Fakır Ali Derviş: Gel Gönül Gidelim Dost İlle-",
+      "poem_number": 24,
+      "meter": "11'li hece",
+      "token_count": 148,
+      "stanza_count": 11,
+      "page_start": 196,
+      "page_end": 202
+    },
+    {
+      "poet": "Âgâhî",
+      "title": "25. Âgâhî: Gel Ey Vaiz Ali’nin Fazlını Evvel Hüda’dan",
+      "poem_number": 25,
+      "meter": "8'li hece",
+      "token_count": 355,
+      "stanza_count": 18,
+      "page_start": 204,
+      "page_end": 212
+    },
+    {
+      "poet": "Mücrimî",
+      "title": "26. Mücrimî: Eğer Bir Mürşidden İrşad Olursan",
+      "poem_number": 26,
+      "meter": "11'li hece",
+      "token_count": 129,
+      "stanza_count": 8,
+      "page_start": 214,
+      "page_end": 218
+    },
+    {
+      "poet": "Melulî (Karaca Erbil)",
+      "title": "27. Melulî: Hakikat Şehrinin Yoluna Giren",
+      "poem_number": 27,
+      "meter": null,
+      "token_count": 118,
+      "stanza_count": 8,
+      "page_start": 220,
+      "page_end": 224
+    },
+    {
+      "poet": "Âşık Veysel (Veysel Şatıroğlu)",
+      "title": "28. Âşık Veysel: Aldanma Cahilin Kuru Lafına",
+      "poem_number": 28,
+      "meter": "11'li hece",
+      "token_count": 81,
+      "stanza_count": 5,
+      "page_start": 227,
+      "page_end": 230
+    },
+    {
+      "poet": "Âşık Veysel (Veysel Şatıroğlu)",
+      "title": "29. Âşık Veysel: Saklarım Gözümde Güzelliğini",
+      "poem_number": 29,
+      "meter": "11'li hece",
+      "token_count": 178,
+      "stanza_count": 11,
+      "page_start": 231,
+      "page_end": 236
+    },
+    {
+      "poet": "Âşık Veysel (Veysel Şatıroğlu)",
+      "title": "30. Âşık Veysel: Kulak Ver Sözüme Dinle Vatandaş",
+      "poem_number": 30,
+      "meter": "11'li hece",
+      "token_count": 166,
+      "stanza_count": 9,
+      "page_start": 237,
+      "page_end": 240
+    },
+    {
+      "poet": "Âşık Veysel (Veysel Şatıroğlu)",
+      "title": "31. Âşık Veysel: Kaldırsam Perdeyi Döksem Suçunu",
+      "poem_number": 31,
+      "meter": "11'li hece",
+      "token_count": 143,
+      "stanza_count": 8,
+      "page_start": 241,
+      "page_end": 245
+    },
+    {
+      "poet": "Âşık Veysel (Veysel Şatıroğlu)",
+      "title": "32. Âşık Veysel: Beni Hor Görme Kardaşım",
+      "poem_number": 32,
+      "meter": "8'li hece",
+      "token_count": 128,
+      "stanza_count": 8,
+      "page_start": 246,
+      "page_end": 252
+    },
+    {
+      "poet": "Nimri Dede (İsmail Dehmen)",
+      "title": "33. Nimri Dede: İkilik Kinini İçimden Atıp",
+      "poem_number": 33,
+      "meter": "11'li hece",
+      "token_count": 138,
+      "stanza_count": 8,
+      "page_start": 254,
+      "page_end": 260
+    },
+    {
+      "poet": "İbreti (Hıdır Gürel)",
+      "title": "34. İbreti: Hakk’ı Pek Yakından Gördük İnandık",
+      "poem_number": 34,
+      "meter": null,
+      "token_count": 117,
+      "stanza_count": 7,
+      "page_start": 262,
+      "page_end": 266
+    },
+    {
+      "poet": "Davut Sulari (Davut Ağbaba)",
+      "title": "35. Davut Sulari: Ben Pirim Diyene Selam Söyleyin",
+      "poem_number": 35,
+      "meter": "11'li hece",
+      "token_count": 108,
+      "stanza_count": 7,
+      "page_start": 269,
+      "page_end": 272
+    },
+    {
+      "poet": "Işık Ruhan (Mehmet Ali Işık)",
+      "title": "36. Işık Ruhan: Ervâh-ı Ezelden Aslın Bilenler",
+      "poem_number": 36,
+      "meter": "11'li hece",
+      "token_count": 192,
+      "stanza_count": 10,
+      "page_start": 275,
+      "page_end": 281
+    },
+    {
+      "poet": "Işık Ruhan (Mehmet Ali Işık)",
+      "title": "37. Işık Ruhan: Cihanda Çok İnsan Oldu Zamana",
+      "poem_number": 37,
+      "meter": "11'li hece",
+      "token_count": 268,
+      "stanza_count": 14,
+      "page_start": 282,
+      "page_end": 289
+    },
+    {
+      "poet": "Işık Ruhan (Mehmet Ali Işık)",
+      "title": "38. Işık Ruhan: Terk Eyle Riyayı Gönül Usul Ol",
+      "poem_number": 38,
+      "meter": "11'li hece",
+      "token_count": 193,
+      "stanza_count": 12,
+      "page_start": 290,
+      "page_end": 294
+    },
+    {
+      "poet": "Işık Ruhan (Mehmet Ali Işık)",
+      "title": "39. Işık Ruhan: Beni Bu Dertlere Saldın",
+      "poem_number": 39,
+      "meter": "8'li hece",
+      "token_count": 84,
+      "stanza_count": 6,
+      "page_start": 295,
+      "page_end": 298
+    },
+    {
+      "poet": "Işık Ruhan (Mehmet Ali Işık)",
+      "title": "40. Işık Ruhan: Doğup Şu Cihana Aklım Ereli",
+      "poem_number": 40,
+      "meter": "11'li hece",
+      "token_count": 101,
+      "stanza_count": 6,
+      "page_start": 299,
+      "page_end": 304
+    },
+    {
+      "poet": "Nesimi Çimen",
+      "title": "41. Nesimi Çimen: Şifa İstemem Balından",
+      "poem_number": 41,
+      "meter": "8'li hece",
+      "token_count": 75,
+      "stanza_count": 6,
+      "page_start": 306,
+      "page_end": 310
+    },
+    {
+      "poet": "Âşık Daimi (İsmail Aydın)",
+      "title": "42. Âşık Daimi: Bir Gerçeğe Bel Bağladım Erenler",
+      "poem_number": 42,
+      "meter": "11'li hece",
+      "token_count": 90,
+      "stanza_count": 6,
+      "page_start": 312,
+      "page_end": 315
+    },
+    {
+      "poet": "Âşık Daimi (İsmail Aydın)",
+      "title": "43. Âşık Daimi: Hakikat Remzinden Mana Seçenler",
+      "poem_number": 43,
+      "meter": "11'li hece",
+      "token_count": 161,
+      "stanza_count": 10,
+      "page_start": 316,
+      "page_end": 320
+    },
+    {
+      "poet": "Âşık Daimi (İsmail Aydın)",
+      "title": "44. Âşık Daimi: Uğradım Yüz Sürdüm Pirin Katına",
+      "poem_number": 44,
+      "meter": "11'li hece",
+      "token_count": 120,
+      "stanza_count": 8,
+      "page_start": 321,
+      "page_end": 324
+    },
+    {
+      "poet": "Âşık Daimi (İsmail Aydın)",
+      "title": "45. Âşık Daimi: Menzil Almak İster İsen",
+      "poem_number": 45,
+      "meter": "8'li hece",
+      "token_count": 89,
+      "stanza_count": 7,
+      "page_start": 325,
+      "page_end": 328
+    },
+    {
+      "poet": "Neşet Ertaş",
+      "title": "46. Neşet Ertaş: Bir Anadan Dünyaya Gelen Yolcu",
+      "poem_number": 46,
+      "meter": "11'li hece",
+      "token_count": 127,
+      "stanza_count": 7,
+      "page_start": 330,
+      "page_end": 334
+    },
+    {
+      "poet": "Hüdai (Sabri Orak)",
+      "title": "47. Hüdai: Ey Erenler Yine Bozuldu Bendim",
+      "poem_number": 47,
+      "meter": "8'li hece",
+      "token_count": 89,
+      "stanza_count": 6,
+      "page_start": 336,
+      "page_end": 339
+    },
+    {
+      "poet": "Hüdai (Sabri Orak)",
+      "title": "48. Hüdai: Gönül Çalamazsın Aşkın Sazını",
+      "poem_number": 48,
+      "meter": "11'li hece",
+      "token_count": 127,
+      "stanza_count": 8,
+      "page_start": 340,
+      "page_end": 344
+    },
+    {
+      "poet": "Mahzuni Şerif (Şerif Cırık)",
+      "title": "49. Mahzuni Şerif: Bana Bir Sünni Demişler",
+      "poem_number": 49,
+      "meter": "8'li hece",
+      "token_count": 159,
+      "stanza_count": 11,
+      "page_start": 348,
+      "page_end": 356
+    },
+    {
+      "poet": "Ali Cemali (Ali Çetinkaya)",
+      "title": "50. Ali Cemali: Bütün İnsanlardan Arzumuz Vardır",
+      "poem_number": 50,
+      "meter": "11'li hece",
+      "token_count": 92,
+      "stanza_count": 6,
+      "page_start": 358,
+      "page_end": 362
+    },
+    {
+      "poet": "Perişan Ali (Ali İspir)",
+      "title": "51. Perişan Ali: Hilekâr Dostlardan Bıktım Usandım",
+      "poem_number": 51,
+      "meter": "11'li hece",
+      "token_count": 86,
+      "stanza_count": 5,
+      "page_start": 364,
+      "page_end": 368
+    },
+    {
+      "poet": "Erbabi (Arif Çubuk)",
+      "title": "52. Erbabi: Sözde Riya Olur Duyunca Kanma",
+      "poem_number": 52,
+      "meter": "11'li hece",
+      "token_count": 206,
+      "stanza_count": 12,
+      "page_start": 371,
+      "page_end": 376
+    },
+    {
+      "poet": "Muhlis Akarsu",
+      "title": "53. Muhlis Akarsu: Açığım Yok Kapalım Yok Dünyada",
+      "poem_number": 53,
+      "meter": "11'li hece",
+      "token_count": 107,
+      "stanza_count": 6,
+      "page_start": 378,
+      "page_end": 382
+    },
+    {
+      "poet": "Dertli Divani (Veli Aykut)",
+      "title": "54. Dertli Divani: Hab-ı Gafletten Uyanıp",
+      "poem_number": 54,
+      "meter": null,
+      "token_count": 176,
+      "stanza_count": 13,
+      "page_start": 385,
+      "page_end": 390
+    },
+    {
+      "poet": "Dertli Divani (Veli Aykut)",
+      "title": "55. Dertli Divani: Yaşanılası Dünyanın",
+      "poem_number": 55,
+      "meter": null,
+      "token_count": 135,
+      "stanza_count": 10,
+      "page_start": 391,
+      "page_end": 396
+    },
+    {
+      "poet": "Sadık Miskini (Sait Küçük)",
+      "title": "56. Sadık Miskini: Sevenlere Gönül Verdim",
+      "poem_number": 56,
+      "meter": "7'li hece",
+      "token_count": 68,
+      "stanza_count": 7,
+      "page_start": 398,
+      "page_end": 402
+    },
+    {
+      "poet": "İpek Mehmet (Mehmet İpek)",
+      "title": "57. İpek Mehmet: Bugün Bir Kar Yağdı Ömür Dağıma",
+      "poem_number": 57,
+      "meter": "11'li hece",
+      "token_count": 49,
+      "stanza_count": 3,
+      "page_start": 404,
+      "page_end": 413
+    },
+    {
+      "poet": "Işık (Caner Işık)",
+      "title": "1. Işık: Hak Olan Hizmetler Kabul Eylensin",
+      "poem_number": 1,
+      "meter": "11'li hece",
+      "token_count": 317,
+      "stanza_count": 16,
+      "page_start": 25,
+      "page_end": 36
+    },
+    {
+      "poet": "Işık (Caner Işık)",
+      "title": "2. Işık: Hak Olanı Niye Kıskanır İnsan",
+      "poem_number": 2,
+      "meter": "11'li hece",
+      "token_count": 320,
+      "stanza_count": 17,
+      "page_start": 37,
+      "page_end": 43
+    },
+    {
+      "poet": "Işık (Caner Işık)",
+      "title": "3. Işık: Hak Yol Zordur Kolayına Kaçmayın",
+      "poem_number": 3,
+      "meter": "11'li hece",
+      "token_count": 179,
+      "stanza_count": 9,
+      "page_start": 44,
+      "page_end": 48
+    },
+    {
+      "poet": "Işık (Caner Işık)",
+      "title": "4. Işık: İnsana İmkânlar Sunulmuş Çoktan",
+      "poem_number": 4,
+      "meter": "11'li hece",
+      "token_count": 110,
+      "stanza_count": 7,
+      "page_start": 49,
+      "page_end": 53
+    },
+    {
+      "poet": "Işık (Caner Işık)",
+      "title": "5. Işık: Erenlerin Bahçesinde Açar Gülümüz Bizim",
+      "poem_number": 5,
+      "meter": null,
+      "token_count": 182,
+      "stanza_count": 10,
+      "page_start": 54,
+      "page_end": 57
+    },
+    {
+      "poet": "Işık (Caner Işık)",
+      "title": "6. Işık: Ellerin Hatasından Ders Almalı",
+      "poem_number": 6,
+      "meter": "11'li hece",
+      "token_count": 158,
+      "stanza_count": 9,
+      "page_start": 58,
+      "page_end": 63
+    },
+    {
+      "poet": "Işık (Caner Işık)",
+      "title": "7. Işık: Yokluğu Varlığa Ne Çevirecek",
+      "poem_number": 7,
+      "meter": "11'li hece",
+      "token_count": 210,
+      "stanza_count": 14,
+      "page_start": 64,
+      "page_end": 69
+    },
+    {
+      "poet": "Işık (Caner Işık)",
+      "title": "8. Işık: Dünyayı Hor Görme Zatın Görmeden",
+      "poem_number": 8,
+      "meter": "11'li hece",
+      "token_count": 102,
+      "stanza_count": 6,
+      "page_start": 70,
+      "page_end": 75
+    },
+    {
+      "poet": "Işık (Caner Işık)",
+      "title": "9. Işık: Vücut İkliminden Sual Sorarsan",
+      "poem_number": 9,
+      "meter": "11'li hece",
+      "token_count": 204,
+      "stanza_count": 11,
+      "page_start": 76,
+      "page_end": 83
+    },
+    {
+      "poet": "Işık (Caner Işık)",
+      "title": "10. Işık: Erenler Meydanı Kurup Beklemiş",
+      "poem_number": 10,
+      "meter": "11'li hece",
+      "token_count": 130,
+      "stanza_count": 8,
+      "page_start": 84,
+      "page_end": 90
+    },
+    {
+      "poet": "Işık (Caner Işık)",
+      "title": "11. Işık: Bayram Nedir, Bayram Neye Edilir",
+      "poem_number": 11,
+      "meter": "11'li hece",
+      "token_count": 143,
+      "stanza_count": 9,
+      "page_start": 91,
+      "page_end": 96
+    },
+    {
+      "poet": "Işık (Caner Işık)",
+      "title": "12. Işık: Bilen Kurban Bilmeyen Hayvan Keser",
+      "poem_number": 12,
+      "meter": "11'li hece",
+      "token_count": 305,
+      "stanza_count": 15,
+      "page_start": 97,
+      "page_end": 103
+    },
+    {
+      "poet": "Işık (Caner Işık)",
+      "title": "13. Işık: Hakk’ın Tezgâhında Malın Satanlar",
+      "poem_number": 13,
+      "meter": null,
+      "token_count": 267,
+      "stanza_count": 12,
+      "page_start": 104,
+      "page_end": 108
+    },
+    {
+      "poet": "Işık (Caner Işık)",
+      "title": "14. Işık: Hayat Ne Zaman Normale Dönecek",
+      "poem_number": 14,
+      "meter": "11'li hece",
+      "token_count": 94,
+      "stanza_count": 6,
+      "page_start": 109,
+      "page_end": 113
+    },
+    {
+      "poet": "Işık (Caner Işık)",
+      "title": "15. Işık: Kerbela’nın Hikmetin Soran Canlar",
+      "poem_number": 15,
+      "meter": "11'li hece",
+      "token_count": 277,
+      "stanza_count": 17,
+      "page_start": 114,
+      "page_end": 126
+    },
+    {
+      "poet": "Işık (Caner Işık)",
+      "title": "16. Işık: Bir Seyran Eyledim Kendi Hâlimde",
+      "poem_number": 16,
+      "meter": null,
+      "token_count": 165,
+      "stanza_count": 10,
+      "page_start": 127,
+      "page_end": 132
+    },
+    {
+      "poet": "Işık (Caner Işık)",
+      "title": "17. Işık: Gözlerim Doluyor Neredesiniz",
+      "poem_number": 17,
+      "meter": null,
+      "token_count": 131,
+      "stanza_count": 9,
+      "page_start": 133,
+      "page_end": 139
+    },
+    {
+      "poet": "Işık (Caner Işık)",
+      "title": "18. Işık: Yaratıldı Cihan Bilinemedi",
+      "poem_number": 18,
+      "meter": "11'li hece",
+      "token_count": 129,
+      "stanza_count": 8,
+      "page_start": 140,
+      "page_end": 143
+    },
+    {
+      "poet": "Işık (Caner Işık)",
+      "title": "19. Işık: Niyetin Ne İse Amelin Odur",
+      "poem_number": 19,
+      "meter": "11'li hece",
+      "token_count": 151,
+      "stanza_count": 10,
+      "page_start": 144,
+      "page_end": 149
+    },
+    {
+      "poet": "Işık (Caner Işık)",
+      "title": "20. Işık: Hak Sende İçinde Uyanan Canlar",
+      "poem_number": 20,
+      "meter": "11'li hece",
+      "token_count": 129,
+      "stanza_count": 8,
+      "page_start": 150,
+      "page_end": 154
+    },
+    {
+      "poet": "Işık (Caner Işık)",
+      "title": "21. Işık: Ali Evladını Rehber Bilirsen",
+      "poem_number": 21,
+      "meter": "11'li hece",
+      "token_count": 158,
+      "stanza_count": 10,
+      "page_start": 155,
+      "page_end": 160
+    },
+    {
+      "poet": "Işık (Caner Işık)",
+      "title": "22. Işık: Doğaya Bakarsan Hakk’ı Görürsün",
+      "poem_number": 22,
+      "meter": "11'li hece",
+      "token_count": 165,
+      "stanza_count": 10,
+      "page_start": 161,
+      "page_end": 168
+    },
+    {
+      "poet": "Işık (Caner Işık)",
+      "title": "23. Işık: Çoğunluk Âlemde Bir Gürültüdür",
+      "poem_number": 23,
+      "meter": "11'li hece",
+      "token_count": 121,
+      "stanza_count": 7,
+      "page_start": 169,
+      "page_end": 173
+    },
+    {
+      "poet": "Işık (Caner Işık)",
+      "title": "24. Işık: Kur’an’ı Hak Kelam Bilmeyen Cahil",
+      "poem_number": 24,
+      "meter": "11'li hece",
+      "token_count": 200,
+      "stanza_count": 11,
+      "page_start": 174,
+      "page_end": 179
+    },
+    {
+      "poet": "Işık (Caner Işık)",
+      "title": "25. Işık: İkrarına Sadık Olmazsa Kişi",
+      "poem_number": 25,
+      "meter": "11'li hece",
+      "token_count": 184,
+      "stanza_count": 11,
+      "page_start": 180,
+      "page_end": 185
+    },
+    {
+      "poet": "Işık (Caner Işık)",
+      "title": "26. Işık: Derdimin Dermanı Tuttuğum İpsin",
+      "poem_number": 26,
+      "meter": "7'li hece",
+      "token_count": 346,
+      "stanza_count": 16,
+      "page_start": 186,
+      "page_end": 192
+    },
+    {
+      "poet": "Er Yıldırım (Mesut Yıldırım)",
+      "title": "27. Er Yıldırım: Yol Belli Hakk’ın Emridir",
+      "poem_number": 27,
+      "meter": "8'li hece",
+      "token_count": 207,
+      "stanza_count": 13,
+      "page_start": 196,
+      "page_end": 202
+    },
+    {
+      "poet": "Zakir (Orhan Şahin)",
+      "title": "28. Zakir: Rehberim Elinden Hizmetim Aldım",
+      "poem_number": 28,
+      "meter": "11'li hece",
+      "token_count": 176,
+      "stanza_count": 10,
+      "page_start": 205,
+      "page_end": 208
+    },
+    {
+      "poet": "Zakir (Orhan Şahin)",
+      "title": "29. Zakir: Sorarlarsa Bir Gün Bizi",
+      "poem_number": 29,
+      "meter": "8'li hece",
+      "token_count": 176,
+      "stanza_count": 12,
+      "page_start": 209,
+      "page_end": 213
+    },
+    {
+      "poet": "Zakir (Orhan Şahin)",
+      "title": "30. Zakir: Gerçeğin Duası Siler Şeytan’ı",
+      "poem_number": 30,
+      "meter": "11'li hece",
+      "token_count": 157,
+      "stanza_count": 9,
+      "page_start": 214,
+      "page_end": 219
+    },
+    {
+      "poet": "Zakir (Orhan Şahin)",
+      "title": "31. Zakir: Dünyanın Yükünü Erenler Taşır",
+      "poem_number": 31,
+      "meter": "11'li hece",
+      "token_count": 154,
+      "stanza_count": 9,
+      "page_start": 220,
+      "page_end": 228
+    },
+    {
+      "poet": "Bülent (Bülent Akdağ)",
+      "title": "32. Bülent: Yola Gidilmez Sadece İlimle",
+      "poem_number": 32,
+      "meter": null,
+      "token_count": 95,
+      "stanza_count": 6,
+      "page_start": 231,
+      "page_end": 236
+    },
+    {
+      "poet": "Kul Tuncay (Tuncay Salan)",
+      "title": "32. Kul Tuncay: Talep Eden Talebedir",
+      "poem_number": 32,
+      "meter": "8'li hece",
+      "token_count": 185,
+      "stanza_count": 11,
+      "page_start": 239,
+      "page_end": 244
+    },
+    {
+      "poet": "Kul Tuncay (Tuncay Salan)",
+      "title": "34. Kul Tuncay: Hak Emrini Bilen Kuldur",
+      "poem_number": 34,
+      "meter": "8'li hece",
+      "token_count": 147,
+      "stanza_count": 10,
+      "page_start": 245,
+      "page_end": 252
+    },
+    {
+      "poet": "Gözcü (Kazım Yıldırım)",
+      "title": "35. Gözcü: Rıza Kapısından Geçeyim Dersen",
+      "poem_number": 35,
+      "meter": "11'li hece",
+      "token_count": 277,
+      "stanza_count": 13,
+      "page_start": 255,
+      "page_end": 260
+    },
+    {
+      "poet": "Eroğlu (Yılmaz Doğan)",
+      "title": "36. Eroğlu: Rehberimi Buldum Gönlüm Şad Oldu",
+      "poem_number": 36,
+      "meter": "11'li hece",
+      "token_count": 80,
+      "stanza_count": 5,
+      "page_start": 262,
+      "page_end": 266
+    },
+    {
+      "poet": "Can Yunus (Yunus Emrah Şahin)",
+      "title": "37. Can Yunus: Rıza Kapısında Bekler Dururum",
+      "poem_number": 37,
+      "meter": "11'li hece",
+      "token_count": 179,
+      "stanza_count": 11,
+      "page_start": 268,
+      "page_end": 274
+    },
+    {
+      "poet": "Vatani (Ali Onar)",
+      "title": "38. Vatani: Hazreti Âdem’le Geldi Nübüvvet",
+      "poem_number": 38,
+      "meter": "11'li hece",
+      "token_count": 291,
+      "stanza_count": 17,
+      "page_start": 277,
+      "page_end": 284
+    },
+    {
+      "poet": "Kul Pervane (Suat Olcay)",
+      "title": "39. Kul Pervane: Bir Gerçek ki Yanı Başta Parlıyor",
+      "poem_number": 39,
+      "meter": "11'li hece",
+      "token_count": 218,
+      "stanza_count": 12,
+      "page_start": 287,
+      "page_end": 292
+    },
+    {
+      "poet": "Kor Pervane (Koray Korkmaz)",
+      "title": "40. Kor Pervane: Kusurlar Günahlar Hep Bizlerde",
+      "poem_number": 40,
+      "meter": "8'li hece",
+      "token_count": 191,
+      "stanza_count": 13,
+      "page_start": 295,
+      "page_end": 300
+    },
+    {
+      "poet": "Kor Pervane (Koray Korkmaz)",
+      "title": "41. Kor Pervane: Dilde Hak Söylenir Hâlinde Yoktur",
+      "poem_number": 41,
+      "meter": "8'li hece",
+      "token_count": 255,
+      "stanza_count": 12,
+      "page_start": 301,
+      "page_end": 308
+    },
+    {
+      "poet": "Düşküni (Tansu Kadakoğlu)",
+      "title": "42. Düşküni: Benlik Kalesi Puttur Deviresin",
+      "poem_number": 42,
+      "meter": null,
+      "token_count": 115,
+      "stanza_count": 7,
+      "page_start": 310,
+      "page_end": 316
+    },
+    {
+      "poet": "Derman Bacı (Yaprak Kesici)",
+      "title": "43. Derman Bacı: Bir Laf ile Yıkılma Tut Hâlini",
+      "poem_number": 43,
+      "meter": "11'li hece",
+      "token_count": 166,
+      "stanza_count": 11,
+      "page_start": 319,
+      "page_end": 324
+    },
+    {
+      "poet": "Yoloğlu (Berk Yoloğlu)",
+      "title": "44. Yoloğlu: Kalem Olmuşum, Ruhum Yazar Durur",
+      "poem_number": 44,
+      "meter": "11'li hece",
+      "token_count": 115,
+      "stanza_count": 7,
+      "page_start": 326,
+      "page_end": 332
+    },
+    {
+      "poet": "Bircan (Bircan Kayacan)",
+      "title": "45. Bircan: Yola Girmek Nasipledir Ararsan",
+      "poem_number": 45,
+      "meter": "11'li hece",
+      "token_count": 426,
+      "stanza_count": 20,
+      "page_start": 334,
+      "page_end": 342
+    },
+    {
+      "poet": "Çağla (Çağla Karasu)",
+      "title": "46. Çağla: Eğer Hakkıyla Bir Yolu Sürersen",
+      "poem_number": 46,
+      "meter": "11'li hece",
+      "token_count": 119,
+      "stanza_count": 6,
+      "page_start": 344,
+      "page_end": 348
+    },
+    {
+      "poet": "Şah Hatayi (Şah İsmail)",
+      "title": "47. Şah Hatayi: Geldi Çağırdı Cebrail",
+      "poem_number": 47,
+      "meter": "8'li hece",
+      "token_count": 536,
+      "stanza_count": 43,
+      "page_start": 351,
+      "page_end": 370
+    },
+    {
+      "poet": "Âşıki (Âşıki Ahmet)",
+      "title": "48. Âşıki: Peygamber’i Miraca Okudu Çalap",
+      "poem_number": 48,
+      "meter": "11'li hece",
+      "token_count": 399,
+      "stanza_count": 23,
+      "page_start": 371,
+      "page_end": 382
+    },
+    {
+      "poet": "Feyzi (Feyzullah Çelebi)",
+      "title": "49. Feyzi (Feyzullah Çelebi): Miraç Okudu Cebrail",
+      "poem_number": 49,
+      "meter": "8'li hece",
+      "token_count": 496,
+      "stanza_count": 33,
+      "page_start": 383,
+      "page_end": 396
+    },
+    {
+      "poet": "Işık Miraçlaması",
+      "title": "50. Işık: Miraç Muradına Ermek",
+      "poem_number": 50,
+      "meter": "8'li hece",
+      "token_count": 285,
+      "stanza_count": 21,
+      "page_start": 397,
+      "page_end": 412
+    }
+  ],
+  "meter_stats": {
+    "11'li hece": 116,
+    "8'li hece": 32,
+    "7'li hece": 5
+  },
+  "era_distribution": {
+    "Kurucu Dönem": 8,
+    "Klasik Dönem": 7,
+    "Geç Dönem": 24,
+    "Modern Dönem": 33
+  },
+  "century_distribution": {
+    "13. yy": 1,
+    "14. yy": 3,
+    "15. yy": 4,
+    "16. yy": 2,
+    "17. yy": 5,
+    "18. yy": 9,
+    "19. yy": 15,
+    "20. yy": 33
+  },
+  "chunk_types": {
+    "BIOGRAPHY": 70,
+    "POEM_PARENT": 169,
+    "POEM_STANZA": 1801,
+    "COMMENTARY": 3154,
+    "POEM_METADATA": 1
+  }
+}

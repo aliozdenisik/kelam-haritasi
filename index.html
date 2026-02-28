@@ -1,0 +1,1447 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kelam'in Haritasi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <style>
+    :root {
+      --bg: #0a0a0f;
+      --bg-overlay: radial-gradient(circle at 20% 15%, rgba(212, 165, 116, 0.12), transparent 40%),
+        radial-gradient(circle at 85% 80%, rgba(139, 26, 26, 0.18), transparent 38%),
+        radial-gradient(circle at 45% 50%, rgba(26, 82, 118, 0.14), transparent 45%);
+      --panel: rgba(255, 255, 255, 0.03);
+      --panel-strong: rgba(255, 255, 255, 0.05);
+      --border: rgba(212, 165, 116, 0.32);
+      --gold: #d4a574;
+      --gold-deep: #c19a6b;
+      --crimson: #8b1a1a;
+      --crimson-light: #c0392b;
+      --teal: #1a5276;
+      --ivory: #f5f0e8;
+      --body: #d4cfc4;
+      --muted: #ada79b;
+      --shadow: 0 10px 28px rgba(0, 0, 0, 0.38);
+      --radius: 16px;
+      --hover-ms: 240ms;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+      background: var(--bg);
+      color: var(--body);
+      font-family: "Inter", sans-serif;
+      min-height: 100%;
+    }
+
+    body {
+      background-image: var(--bg-overlay);
+      background-attachment: fixed;
+      line-height: 1.45;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      margin: 0;
+      color: var(--ivory);
+      font-family: "Cormorant Garamond", serif;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    .shell {
+      width: min(1420px, 96vw);
+      margin: 0 auto;
+      padding: 28px 0 40px;
+      display: grid;
+      gap: 18px;
+    }
+
+    .panel {
+      background: linear-gradient(165deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.02));
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 22px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .panel::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: linear-gradient(115deg, rgba(212, 165, 116, 0.05), transparent 35%, rgba(26, 82, 118, 0.06));
+      opacity: 0.7;
+    }
+
+    .fade-section {
+      opacity: 0;
+      transform: translateY(26px);
+      transition: opacity 650ms ease, transform 650ms ease;
+    }
+
+    .fade-section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .hero {
+      display: grid;
+      gap: 18px;
+      min-height: 300px;
+    }
+
+    .hero-head {
+      display: grid;
+      gap: 6px;
+      border-left: 3px solid var(--gold);
+      padding-left: 12px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.1rem, 5vw, 3.8rem);
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      line-height: 0.98;
+    }
+
+    .hero p {
+      margin: 0;
+      color: var(--muted);
+      font-size: clamp(0.96rem, 1.9vw, 1.18rem);
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(120px, 1fr));
+      gap: 12px;
+    }
+
+    .stat-card {
+      background: rgba(255, 255, 255, 0.025);
+      border: 1px solid rgba(212, 165, 116, 0.22);
+      border-radius: 12px;
+      padding: 12px 10px;
+      display: grid;
+      gap: 5px;
+      place-items: center;
+      transition: transform var(--hover-ms) ease, border-color var(--hover-ms) ease, background var(--hover-ms) ease;
+    }
+
+    .stat-card:hover {
+      transform: translateY(-2px);
+      border-color: rgba(212, 165, 116, 0.5);
+      background: rgba(255, 255, 255, 0.045);
+    }
+
+    .stat-icon {
+      font-size: 1.22rem;
+      filter: drop-shadow(0 0 8px rgba(212, 165, 116, 0.33));
+    }
+
+    .stat-value {
+      color: var(--ivory);
+      font-weight: 700;
+      font-size: clamp(1.08rem, 2vw, 1.5rem);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .stat-label {
+      color: var(--muted);
+      font-size: 0.84rem;
+    }
+
+    .section-title {
+      font-size: clamp(1.5rem, 2.7vw, 2.15rem);
+      margin-bottom: 12px;
+      border-bottom: 1px solid rgba(212, 165, 116, 0.24);
+      padding-bottom: 6px;
+    }
+
+    .timeline-wrap {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 320px;
+      gap: 12px;
+      min-height: 460px;
+    }
+
+    .chart-box {
+      background: var(--panel);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 10px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .timeline-detail {
+      display: grid;
+      grid-template-rows: auto auto 1fr;
+      gap: 8px;
+      background: var(--panel);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 12px;
+    }
+
+    .timeline-detail h3 {
+      font-size: 1.38rem;
+    }
+
+    .timeline-meta {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .poem-list {
+      margin: 0;
+      padding: 0 0 0 16px;
+      overflow: auto;
+      max-height: 305px;
+      display: grid;
+      gap: 6px;
+      color: var(--body);
+      font-size: 0.88rem;
+    }
+
+    .dual-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      min-height: 450px;
+    }
+
+    .sub-title {
+      font-size: 1.25rem;
+      margin-bottom: 8px;
+    }
+
+    .legacy-panel {
+      border: 1px solid rgba(212, 165, 116, 0.5);
+      background: linear-gradient(140deg, rgba(212, 165, 116, 0.07), rgba(255, 255, 255, 0.03));
+    }
+
+    .legacy-note {
+      margin-top: 10px;
+      color: #e6ddce;
+      font-size: 0.98rem;
+      padding: 12px;
+      border-radius: 10px;
+      border: 1px solid rgba(212, 165, 116, 0.32);
+      background: rgba(0, 0, 0, 0.2);
+    }
+
+    .insights-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .insight {
+      background: var(--panel-strong);
+      border: 1px solid rgba(212, 165, 116, 0.2);
+      border-radius: 12px;
+      padding: 12px;
+      transition: transform var(--hover-ms) ease, border-color var(--hover-ms) ease;
+    }
+
+    .insight:hover {
+      transform: translateY(-2px);
+      border-color: rgba(212, 165, 116, 0.5);
+    }
+
+    .insight h4 {
+      margin-bottom: 6px;
+      font-size: 1.2rem;
+      color: var(--gold);
+    }
+
+    .insight p {
+      margin: 0;
+      color: var(--body);
+      font-size: 0.92rem;
+    }
+
+    .tooltip {
+      position: fixed;
+      pointer-events: none;
+      z-index: 999;
+      opacity: 0;
+      transform: translate(12px, 10px);
+      transition: opacity 220ms ease;
+      background: rgba(10, 10, 15, 0.95);
+      border: 1px solid rgba(212, 165, 116, 0.62);
+      border-radius: 10px;
+      padding: 9px 10px;
+      color: var(--ivory);
+      font-size: 0.84rem;
+      line-height: 1.4;
+      box-shadow: 0 8px 28px rgba(0, 0, 0, 0.45);
+      max-width: 300px;
+    }
+
+    .tooltip.visible {
+      opacity: 1;
+    }
+
+    .status {
+      margin-top: 4px;
+      color: #f8d8b0;
+      min-height: 18px;
+      font-size: 0.88rem;
+    }
+
+    .footer {
+      text-align: center;
+      color: var(--muted);
+      padding: 14px 8px 20px;
+      display: grid;
+      gap: 4px;
+      font-size: 0.9rem;
+    }
+
+    .legend-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-right: 10px;
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    .legend-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.32);
+      display: inline-block;
+    }
+
+    .timeline-node {
+      cursor: pointer;
+      transition: opacity var(--hover-ms) ease;
+    }
+
+    .timeline-node.inactive {
+      opacity: 0.25;
+    }
+
+    .timeline-node.selected {
+      stroke: #fff2d4;
+      stroke-width: 2.2;
+    }
+
+    @media (max-width: 1220px) {
+      .stats-grid {
+        grid-template-columns: repeat(3, minmax(120px, 1fr));
+      }
+
+      .timeline-wrap {
+        grid-template-columns: 1fr;
+      }
+
+      .dual-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .insights-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 760px) {
+      .shell {
+        width: 94vw;
+      }
+
+      .stats-grid,
+      .insights-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <section class="panel hero fade-section" id="heroPanel">
+      <div class="hero-head">
+        <h1>KELAM'IN HARİTASI</h1>
+        <p>Prof. Dr. Caner Işık'ın Eserlerindeki Bilgi Evreninin Görselleştirilmesi</p>
+      </div>
+      <div class="stats-grid" id="statsGrid"></div>
+      <div class="status" id="statusText" aria-live="polite"></div>
+    </section>
+
+    <section class="panel fade-section" id="timelinePanel">
+      <h2 class="section-title">Zaman Nehri: 700 Yıllık Şiir Geleneği</h2>
+      <div id="timelineLegend"></div>
+      <div class="timeline-wrap">
+        <div class="chart-box" id="timelineChart"></div>
+        <aside class="timeline-detail">
+          <h3 id="selectedPoetName">Bir şair seçiniz</h3>
+          <div class="timeline-meta" id="selectedPoetMeta">Noktaya tıklayarak ayrıntılı şiir listesini görüntüleyin.</div>
+          <ol class="poem-list" id="selectedPoems"></ol>
+        </aside>
+      </div>
+    </section>
+
+    <section class="panel fade-section" id="treemapPanel">
+      <h2 class="section-title">Yorum Okyanusu: Prof. Işık'ın Şerh Derinliği</h2>
+      <div class="chart-box" id="treemapChart" style="min-height: 430px;"></div>
+    </section>
+
+    <section class="panel fade-section" id="dualPanel">
+      <h2 class="section-title">Vezin Dağılımı + Şiir Yapısı</h2>
+      <div class="dual-grid">
+        <div class="chart-box" id="donutChartWrap">
+          <h3 class="sub-title">Vezin Dağılımı</h3>
+          <div id="donutChart" style="min-height: 340px;"></div>
+        </div>
+        <div class="chart-box" id="scatterChartWrap">
+          <h3 class="sub-title">Şiir Yapısı: Kıta ve Kelime</h3>
+          <div id="scatterChart" style="min-height: 340px;"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel legacy-panel fade-section" id="legacyPanel">
+      <h2 class="section-title">Işık Mirası: İki Neslin Kelam Geleneği</h2>
+      <div class="chart-box" id="legacyChart" style="min-height: 360px;"></div>
+      <p class="legacy-note">Bu veri, iki nesil arasında süregelen bir kelam geleneğini ortaya koymaktadır. Prof. Dr. Caner Işık, büyükbabasının manevi mirasını akademik titizlikle sürdürmüş; 26 şiir ve 549 şerh ile eserin en kapsamlı katkısını sunmuştur.</p>
+    </section>
+
+    <section class="panel fade-section" id="discoveriesPanel">
+      <h2 class="section-title">Verinin Sırları: Keşfedilen Örüntüler</h2>
+      <div class="insights-grid" id="insightsGrid"></div>
+    </section>
+
+    <section class="panel fade-section" id="wordCloudPanel">
+      <h2 class="section-title">Kelam'ın Kelime Evreni</h2>
+      <div class="chart-box" id="wordCloudChart" style="min-height: 470px;"></div>
+    </section>
+
+    <section class="panel fade-section" id="themeHeatmapPanel">
+      <h2 class="section-title">Tasavvuf DNA'sı: Tematik Isı Haritası</h2>
+      <div class="chart-box" id="themeHeatmapChart" style="min-height: 500px;"></div>
+    </section>
+
+    <section class="panel fade-section" id="commentaryDepthPanel">
+      <h2 class="section-title">Şerh Derinliği: Prof. Işık'ın Yorum Yoğunluğu</h2>
+      <div class="chart-box" id="commentaryDepthChart" style="min-height: 540px;"></div>
+    </section>
+
+    <section class="panel fade-section" id="poetSignaturesPanel">
+      <h2 class="section-title">Şairlerin Parmak İzi: Ayırt Edici Kelimeler</h2>
+      <div class="chart-box" id="poetSignaturesChart" style="min-height: 620px;"></div>
+    </section>
+
+    <footer class="footer">
+      <div>Bu görselleştirme, Prof. Dr. Caner Işık'ın kelam külliyatındaki verilerin dijital analizi ile oluşturulmuştur.</div>
+      <div>© 2026 — Veri Kaynağı: Kelam Külliyatı</div>
+    </footer>
+  </main>
+
+  <div class="tooltip" id="tooltip"></div>
+
+  <script>
+    const eraColors = {
+      "Kurucu Dönem": "#d4a574",
+      "Klasik Dönem": "#1a5276",
+      "Geç Dönem": "#8b1a1a",
+      "Modern Dönem": "#c0392b"
+    };
+
+    const meterColors = {
+      "11'li hece": "#d4a574",
+      "8'li hece": "#5b8c85",
+      "7'li hece": "#8b1a1a",
+      "Belirtilmemiş Vezin": "#6a5acd"
+    };
+
+    const tooltip = d3.select("#tooltip");
+    let appData = null;
+    let deepData = null;
+    let selectedPoet = null;
+
+    const showTooltip = (event, html) => {
+      tooltip.html(html).classed("visible", true);
+      moveTooltip(event);
+    };
+
+    const moveTooltip = (event) => {
+      tooltip
+        .style("left", `${event.clientX + 14}px`)
+        .style("top", `${event.clientY + 14}px`);
+    };
+
+    const hideTooltip = () => tooltip.classed("visible", false);
+
+    const setStatus = (message) => {
+      document.getElementById("statusText").textContent = message;
+    };
+
+    const formatNumber = (value) => new Intl.NumberFormat("tr-TR").format(value);
+
+    const createSvg = (containerSelector, minHeight, margin) => {
+      const container = document.querySelector(containerSelector);
+      container.innerHTML = "";
+      const width = Math.max(container.clientWidth, 320);
+      const height = Math.max(minHeight, 260);
+
+      const svg = d3.select(container)
+        .append("svg")
+        .attr("viewBox", `0 0 ${width} ${height}`)
+        .attr("width", "100%")
+        .attr("height", "100%");
+
+      return { svg, width, height, margin };
+    };
+
+    const animateNumber = (element, target, suffix = "", duration = 1250) => {
+      const interpolator = d3.interpolateNumber(0, target);
+      d3.select(element)
+        .transition()
+        .duration(duration)
+        .ease(d3.easeCubicOut)
+        .tween("text", () => (t) => {
+          const value = interpolator(t);
+          element.textContent = `${formatNumber(Math.round(value))}${suffix}`;
+        });
+    };
+
+    const renderHeroStats = (summary) => {
+      const yearSpan = 700;
+      const cards = [
+        { icon: "🖊", value: summary.total_poets, label: "Şair" },
+        { icon: "📜", value: summary.total_poems, label: "Şiir" },
+        { icon: "📖", value: summary.total_stanzas, label: "Kıta" },
+        { icon: "🔮", value: summary.total_chunks, label: "Parça" },
+        { icon: "📄", value: summary.page_range[1], label: "Sayfa" },
+        { icon: "⏳", value: yearSpan, label: "Yıllık Gelenek", suffix: "+" }
+      ];
+
+      const grid = d3.select("#statsGrid");
+      grid.selectAll("*").remove();
+
+      const card = grid.selectAll("article")
+        .data(cards)
+        .enter()
+        .append("article")
+        .attr("class", "stat-card");
+
+      card.append("div").attr("class", "stat-icon").text((d) => d.icon);
+      card.append("div").attr("class", "stat-value").attr("data-target", (d) => d.value).text("0");
+      card.append("div").attr("class", "stat-label").text((d) => d.label);
+
+      const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          d3.selectAll(".stat-value").each(function(d) {
+            animateNumber(this, d.value, d.suffix ?? "");
+          });
+          obs.disconnect();
+        });
+      }, { threshold: 0.35 });
+
+      observer.observe(document.getElementById("heroPanel"));
+    };
+
+    const renderTimeline = (data) => {
+      const { svg, width, height } = createSvg("#timelineChart", 430, { top: 20, right: 30, bottom: 50, left: 40 });
+      const margin = { top: 20, right: 30, bottom: 50, left: 40 };
+      const innerHeight = height - margin.top - margin.bottom;
+      const chartTop = margin.top;
+
+      const poets = data.poets
+        .filter((d) => Number.isFinite(d.birth_year))
+        .map((d) => ({ ...d }));
+
+      const x = d3.scaleLinear().domain([1240, 2000]).range([margin.left, width - margin.right]);
+      const radius = d3.scaleSqrt()
+        .domain(d3.extent(poets, (d) => d.poem_count))
+        .range([8, 40]);
+
+      const grouped = d3.groups(poets, (d) => d.era)
+        .map(([era, values]) => ({
+          era,
+          min: d3.min(values, (d) => d.birth_year),
+          max: d3.max(values, (d) => d.birth_year)
+        }))
+        .sort((a, b) => a.min - b.min);
+
+      svg.append("g")
+        .selectAll("rect")
+        .data(grouped)
+        .join("rect")
+        .attr("x", (d) => x(d.min - 8))
+        .attr("y", chartTop)
+        .attr("width", (d) => Math.max(10, x(d.max + 8) - x(d.min - 8)))
+        .attr("height", innerHeight)
+        .attr("fill", (d) => eraColors[d.era] ?? "#666")
+        .attr("opacity", 0.08);
+
+      svg.append("g")
+        .selectAll("text")
+        .data(grouped)
+        .join("text")
+        .attr("x", (d) => x((d.min + d.max) / 2))
+        .attr("y", chartTop + 18)
+        .attr("text-anchor", "middle")
+        .attr("fill", "#cabda9")
+        .attr("font-size", 12)
+        .text((d) => d.era);
+
+      poets.forEach((d) => {
+        d.x = x(d.birth_year);
+        d.y = height / 2 + (Math.random() * 40 - 20);
+      });
+
+      const simulation = d3.forceSimulation(poets)
+        .force("x", d3.forceX((d) => x(d.birth_year)).strength(0.9))
+        .force("y", d3.forceY(height / 2 + 12).strength(0.08))
+        .force("collide", d3.forceCollide((d) => radius(d.poem_count) + 1.4))
+        .stop();
+
+      simulation.tick(260);
+
+      const defs = svg.append("defs");
+      const glow = defs.append("filter").attr("id", "isikGlow");
+      glow.append("feGaussianBlur").attr("stdDeviation", 4).attr("result", "blur");
+      const merge = glow.append("feMerge");
+      merge.append("feMergeNode").attr("in", "blur");
+      merge.append("feMergeNode").attr("in", "SourceGraphic");
+
+      const nodes = svg.append("g")
+        .selectAll("circle")
+        .data(poets)
+        .join("circle")
+        .attr("class", "timeline-node")
+        .attr("cx", (d) => d.x)
+        .attr("cy", (d) => d.y)
+        .attr("r", 0)
+        .attr("fill", (d) => eraColors[d.era] ?? "#777")
+        .attr("fill-opacity", 0.75)
+        .attr("stroke", "rgba(245,240,232,0.25)")
+        .attr("stroke-width", 1)
+        .attr("filter", (d) => d.name === "Işık (Caner Işık)" ? "url(#isikGlow)" : null)
+        .on("mouseenter", (event, d) => {
+          showTooltip(event,
+            `<strong>${d.name}</strong><br>${d.birth_year} doğumlu<br>${d.poem_count} şiir<br>${d.era}`
+          );
+        })
+        .on("mousemove", moveTooltip)
+        .on("mouseleave", hideTooltip)
+        .on("click", (_, d) => {
+          selectedPoet = d.name;
+          updateSelectedPoetPanel(data, d.name);
+          nodes.classed("selected", (n) => n.name === d.name);
+          nodes.classed("inactive", (n) => n.name !== d.name);
+        });
+
+      nodes.transition().duration(780).delay((_, i) => i * 8).attr("r", (d) => radius(d.poem_count));
+
+      const axis = d3.axisBottom(x)
+        .tickValues([1240, 1300, 1400, 1500, 1600, 1700, 1800, 1900, 2000])
+        .tickFormat((d) => `${d}`);
+
+      svg.append("g")
+        .attr("transform", `translate(0, ${height - margin.bottom + 6})`)
+        .call(axis)
+        .call((g) => g.selectAll("text").attr("fill", "#d4cfc4").attr("font-size", 11))
+        .call((g) => g.selectAll("line").attr("stroke", "rgba(212,165,116,0.35)"))
+        .call((g) => g.select("path").attr("stroke", "rgba(212,165,116,0.5)"));
+
+      const legend = d3.select("#timelineLegend");
+      legend.selectAll("*").remove();
+      Object.entries(eraColors).forEach(([era, color]) => {
+        const chip = legend.append("span").attr("class", "legend-chip");
+        chip.append("span").attr("class", "legend-dot").style("background", color);
+        chip.append("span").text(era);
+      });
+
+      updateSelectedPoetPanel(data, selectedPoet ?? "Işık (Caner Işık)");
+      const selectedName = selectedPoet ?? "Işık (Caner Işık)";
+      nodes.classed("selected", (d) => d.name === selectedName);
+      nodes.classed("inactive", (d) => d.name !== selectedName);
+    };
+
+    const updateSelectedPoetPanel = (data, poetName) => {
+      const poet = data.poets.find((d) => d.name === poetName) ?? data.poets[0];
+      if (!poet) return;
+      selectedPoet = poet.name;
+
+      document.getElementById("selectedPoetName").textContent = poet.name;
+      document.getElementById("selectedPoetMeta").textContent = `${poet.birth_year} • ${poet.poem_count} şiir • ${poet.commentary_count} şerh • ${poet.era}`;
+
+      const poems = data.poems
+        .filter((p) => p.poet === poet.name)
+        .sort((a, b) => a.page_start - b.page_start);
+
+      const list = d3.select("#selectedPoems");
+      list.selectAll("*").remove();
+      if (poems.length === 0) {
+        list.append("li").text("Bu şair için şiir listesi bulunamadı.");
+        return;
+      }
+
+      poems.forEach((p) => {
+        list.append("li").text(`${p.title} (${p.stanza_count} kıta, ${p.token_count} kelime)`);
+      });
+    };
+
+    const renderTreemap = (data) => {
+      const { svg, width, height } = createSvg("#treemapChart", 430, { top: 8, right: 8, bottom: 8, left: 8 });
+      const poets = [...data.poets]
+        .sort((a, b) => b.commentary_tokens - a.commentary_tokens)
+        .slice(0, 20);
+
+      const root = d3.hierarchy({ children: poets })
+        .sum((d) => d.commentary_tokens || 0)
+        .sort((a, b) => b.value - a.value);
+
+      d3.treemap()
+        .size([width, height])
+        .paddingOuter(3)
+        .paddingInner(2)(root);
+
+      const cell = svg.selectAll("g")
+        .data(root.leaves())
+        .join("g")
+        .attr("transform", (d) => `translate(${d.x0},${d.y0})`);
+
+      cell.append("rect")
+        .attr("width", (d) => Math.max(0, d.x1 - d.x0))
+        .attr("height", (d) => Math.max(0, d.y1 - d.y0))
+        .attr("fill", (d) => eraColors[d.data.era] ?? "#666")
+        .attr("fill-opacity", 0.73)
+        .attr("stroke", "rgba(255,255,255,0.28)")
+        .attr("stroke-width", 1)
+        .attr("rx", 5)
+        .on("mouseenter", (event, d) => {
+          const avg = d.data.commentary_count > 0
+            ? Math.round(d.data.commentary_tokens / d.data.commentary_count)
+            : 0;
+          showTooltip(event,
+            `<strong>${d.data.name}</strong><br>Şerh sayısı: ${formatNumber(d.data.commentary_count)}<br>Şerh kelimesi: ${formatNumber(d.data.commentary_tokens)}<br>Ortalama: ${formatNumber(avg)} kelime`
+          );
+        })
+        .on("mousemove", moveTooltip)
+        .on("mouseleave", hideTooltip)
+        .transition()
+        .duration(720)
+        .attr("fill-opacity", 0.9);
+
+      cell.each(function(d) {
+        const g = d3.select(this);
+        const w = d.x1 - d.x0;
+        const h = d.y1 - d.y0;
+        if (w < 90 || h < 40) return;
+
+        g.append("text")
+          .attr("x", 7)
+          .attr("y", 18)
+          .attr("fill", "#fbf7f1")
+          .attr("font-size", 12)
+          .attr("font-weight", 600)
+          .text(d.data.name.length > 28 ? `${d.data.name.slice(0, 27)}…` : d.data.name);
+
+        g.append("text")
+          .attr("x", 7)
+          .attr("y", 34)
+          .attr("fill", "#eadfce")
+          .attr("font-size", 11)
+          .text(`${formatNumber(d.data.commentary_tokens)} kelime`);
+      });
+    };
+
+    const renderDonut = (data) => {
+      const { svg, width, height } = createSvg("#donutChart", 330, { top: 12, right: 12, bottom: 12, left: 12 });
+      const meterData = Object.entries(data.meter_stats).map(([meter, count]) => ({ meter, count }));
+      const totalMeter = d3.sum(meterData, (d) => d.count);
+      const radius = Math.min(width, height) / 2 - 20;
+
+      const arc = d3.arc().innerRadius(radius * 0.6).outerRadius(radius);
+      const arcHover = d3.arc().innerRadius(radius * 0.6).outerRadius(radius + 8);
+      const pie = d3.pie().value((d) => d.count).sort(null);
+      const color = d3.scaleOrdinal()
+        .domain(meterData.map((d) => d.meter))
+        .range(["#d4a574", "#c7a271", "#b98f60"]);
+
+      const g = svg.append("g").attr("transform", `translate(${width / 2},${height / 2})`);
+
+      const slices = g.selectAll("path")
+        .data(pie(meterData))
+        .join("path")
+        .attr("fill", (d) => color(d.data.meter))
+        .attr("stroke", "rgba(255,255,255,0.36)")
+        .attr("stroke-width", 1)
+        .on("mouseenter", (event, d) => {
+          const pct = ((d.data.count / totalMeter) * 100).toFixed(1).replace(".", ",");
+          showTooltip(event, `<strong>${d.data.meter}</strong><br>${formatNumber(d.data.count)} şiir<br>%${pct}`);
+          d3.select(event.currentTarget).transition().duration(220).attr("d", arcHover);
+        })
+        .on("mousemove", moveTooltip)
+        .on("mouseleave", (event) => {
+          hideTooltip();
+          d3.select(event.currentTarget).transition().duration(220).attr("d", arc);
+        });
+
+      slices.transition()
+        .duration(900)
+        .attrTween("d", (d) => {
+          const interpolate = d3.interpolate({ startAngle: d.startAngle, endAngle: d.startAngle }, d);
+          return (t) => arc(interpolate(t));
+        });
+
+      g.append("text")
+        .attr("text-anchor", "middle")
+        .attr("fill", "#f5f0e8")
+        .attr("font-size", 14)
+        .attr("font-weight", 600)
+        .text(`${formatNumber(data.summary.total_poems)} Şiir`);
+
+      g.append("text")
+        .attr("text-anchor", "middle")
+        .attr("fill", "#c8c2b6")
+        .attr("font-size", 11)
+        .attr("dy", 18)
+        .text("Toplam Külliyat");
+
+      const legend = svg.append("g").attr("transform", "translate(12, 12)");
+      meterData.forEach((d, i) => {
+        const row = legend.append("g").attr("transform", `translate(0, ${i * 18})`);
+        row.append("rect").attr("width", 11).attr("height", 11).attr("fill", color(d.meter));
+        row.append("text").attr("x", 16).attr("y", 10).attr("fill", "#cdc5b7").attr("font-size", 11).text(d.meter);
+      });
+    };
+
+    const renderScatter = (data) => {
+      const { svg, width, height } = createSvg("#scatterChart", 330, { top: 20, right: 16, bottom: 50, left: 58 });
+      const margin = { top: 20, right: 16, bottom: 50, left: 58 };
+      const innerWidth = width - margin.left - margin.right;
+      const innerHeight = height - margin.top - margin.bottom;
+
+      const poems = data.poems.map((d) => ({
+        ...d,
+        meter: d.meter ?? "Belirtilmemiş Vezin"
+      }));
+
+      const x = d3.scaleLinear()
+        .domain([0, d3.max(poems, (d) => d.stanza_count) + 2])
+        .range([0, innerWidth]);
+
+      const y = d3.scaleLinear()
+        .domain([0, d3.max(poems, (d) => d.token_count) + 30])
+        .range([innerHeight, 0]);
+
+      const r = d3.scaleSqrt()
+        .domain(d3.extent(poems, (d) => d.token_count))
+        .range([3, 11]);
+
+      const color = d3.scaleOrdinal()
+        .domain(Object.keys(meterColors))
+        .range(Object.values(meterColors));
+
+      const g = svg.append("g").attr("transform", `translate(${margin.left},${margin.top})`);
+
+      g.append("g")
+        .attr("opacity", 0.15)
+        .call(d3.axisLeft(y).ticks(6).tickSize(-innerWidth).tickFormat(() => ""));
+
+      g.append("g")
+        .attr("transform", `translate(0,${innerHeight})`)
+        .call(d3.axisBottom(x).ticks(8))
+        .call((axis) => axis.selectAll("text").attr("fill", "#d4cfc4").attr("font-size", 11))
+        .call((axis) => axis.selectAll("line").attr("stroke", "rgba(212,165,116,0.35)"))
+        .call((axis) => axis.select("path").attr("stroke", "rgba(212,165,116,0.5)"));
+
+      g.append("g")
+        .call(d3.axisLeft(y).ticks(6))
+        .call((axis) => axis.selectAll("text").attr("fill", "#d4cfc4").attr("font-size", 11))
+        .call((axis) => axis.selectAll("line").attr("stroke", "rgba(212,165,116,0.35)"))
+        .call((axis) => axis.select("path").attr("stroke", "rgba(212,165,116,0.5)"));
+
+      g.selectAll("circle")
+        .data(poems)
+        .join("circle")
+        .attr("cx", (d) => x(d.stanza_count))
+        .attr("cy", (d) => y(d.token_count))
+        .attr("r", 0)
+        .attr("fill", (d) => color(d.meter))
+        .attr("fill-opacity", 0.74)
+        .attr("stroke", "rgba(255,255,255,0.2)")
+        .attr("stroke-width", 1)
+        .on("mouseenter", (event, d) => {
+          showTooltip(event,
+            `<strong>${d.title}</strong><br>${d.poet}<br>${d.stanza_count} kıta • ${formatNumber(d.token_count)} kelime<br>${d.meter}`
+          );
+          d3.select(event.currentTarget).transition().duration(220).attr("fill-opacity", 1);
+        })
+        .on("mousemove", moveTooltip)
+        .on("mouseleave", (event) => {
+          hideTooltip();
+          d3.select(event.currentTarget).transition().duration(220).attr("fill-opacity", 0.74);
+        })
+        .transition()
+        .duration(760)
+        .delay((_, i) => Math.min(i * 5, 500))
+        .attr("r", (d) => r(d.token_count));
+
+      g.append("text")
+        .attr("x", innerWidth / 2)
+        .attr("y", innerHeight + 38)
+        .attr("text-anchor", "middle")
+        .attr("fill", "#d8d0c2")
+        .attr("font-size", 12)
+        .text("Kıta Sayısı");
+
+      g.append("text")
+        .attr("transform", "rotate(-90)")
+        .attr("x", -innerHeight / 2)
+        .attr("y", -40)
+        .attr("text-anchor", "middle")
+        .attr("fill", "#d8d0c2")
+        .attr("font-size", 12)
+        .text("Kelime Sayısı");
+    };
+
+    const renderLegacy = (data) => {
+      const { svg, width, height } = createSvg("#legacyChart", 330, { top: 18, right: 20, bottom: 38, left: 150 });
+      const margin = { top: 18, right: 20, bottom: 38, left: 150 };
+      const innerWidth = width - margin.left - margin.right;
+      const innerHeight = height - margin.top - margin.bottom;
+
+      const caner = data.poets.find((d) => d.name === "Işık (Caner Işık)");
+      const ruhan = data.poets.find((d) => d.name.includes("Işık Ruhan"));
+      if (!caner || !ruhan) return;
+
+      const metrics = [
+        { key: "Şiir", caner: caner.poem_count, ruhan: ruhan.poem_count },
+        { key: "Şerh", caner: caner.commentary_count, ruhan: ruhan.commentary_count },
+        { key: "Şerh Kelimesi", caner: caner.commentary_tokens, ruhan: ruhan.commentary_tokens },
+        { key: "Kıta", caner: caner.stanza_count, ruhan: ruhan.stanza_count }
+      ];
+
+      const x = d3.scaleLinear()
+        .domain([0, d3.max(metrics.flatMap((d) => [d.caner, d.ruhan])) * 1.12])
+        .range([0, innerWidth]);
+
+      const y0 = d3.scaleBand()
+        .domain(metrics.map((d) => d.key))
+        .range([0, innerHeight])
+        .padding(0.32);
+
+      const y1 = d3.scaleBand()
+        .domain(["Caner Işık", "Işık Ruhan"])
+        .range([0, y0.bandwidth()])
+        .padding(0.18);
+
+      const g = svg.append("g").attr("transform", `translate(${margin.left},${margin.top})`);
+
+      g.append("g")
+        .call(d3.axisLeft(y0))
+        .call((axis) => axis.selectAll("text").attr("fill", "#f1e9db").attr("font-size", 12))
+        .call((axis) => axis.selectAll("line,path").attr("stroke", "rgba(212,165,116,0.38)"));
+
+      g.append("g")
+        .attr("transform", `translate(0, ${innerHeight})`)
+        .call(d3.axisBottom(x).ticks(5))
+        .call((axis) => axis.selectAll("text").attr("fill", "#d4cfc4").attr("font-size", 11))
+        .call((axis) => axis.selectAll("line").attr("stroke", "rgba(212,165,116,0.35)"))
+        .call((axis) => axis.select("path").attr("stroke", "rgba(212,165,116,0.5)"));
+
+      const groups = g.selectAll(".metric")
+        .data(metrics)
+        .join("g")
+        .attr("class", "metric")
+        .attr("transform", (d) => `translate(0, ${y0(d.key)})`);
+
+      const makeBarData = (d) => [
+        { name: "Caner Işık", value: d.caner, color: "#d4a574" },
+        { name: "Işık Ruhan", value: d.ruhan, color: "#c0392b" }
+      ];
+
+      groups.selectAll("rect")
+        .data((d) => makeBarData(d))
+        .join("rect")
+        .attr("x", 0)
+        .attr("y", (d) => y1(d.name))
+        .attr("height", y1.bandwidth())
+        .attr("width", 0)
+        .attr("fill", (d) => d.color)
+        .attr("rx", 5)
+        .on("mouseenter", (event, d) => showTooltip(event, `<strong>${d.name}</strong><br>${formatNumber(d.value)}`))
+        .on("mousemove", moveTooltip)
+        .on("mouseleave", hideTooltip)
+        .transition()
+        .duration(760)
+        .attr("width", (d) => x(d.value));
+
+      groups.selectAll("text.value")
+        .data((d) => makeBarData(d))
+        .join("text")
+        .attr("class", "value")
+        .attr("x", (d) => x(d.value) + 6)
+        .attr("y", (d) => y1(d.name) + y1.bandwidth() / 2 + 4)
+        .attr("fill", "#f5f0e8")
+        .attr("font-size", 11)
+        .text((d) => formatNumber(d.value));
+
+      const legend = svg.append("g").attr("transform", `translate(${margin.left}, 8)`);
+      [
+        { name: "Caner Işık", color: "#d4a574" },
+        { name: "Işık Ruhan", color: "#c0392b" }
+      ].forEach((d, i) => {
+        const item = legend.append("g").attr("transform", `translate(${i * 120}, 0)`);
+        item.append("rect").attr("width", 10).attr("height", 10).attr("fill", d.color);
+        item.append("text").attr("x", 14).attr("y", 9).attr("fill", "#d8cfbf").attr("font-size", 11).text(d.name);
+      });
+    };
+
+    const renderDiscoveries = () => {
+      const insights = [
+        {
+          title: "En Uzun Şiir",
+          text: "Harâbî'nin Vahdetname'si 54 kıta ve 944 kelimeyle külliyatın destansı zirvesidir."
+        },
+        {
+          title: "En Çok Şerh Edilen",
+          text: "Şah Hatayi toplam 273 şerh ile yorum geleneğinin merkezindeki isim olarak belirir."
+        },
+        {
+          title: "Baskın Vezin",
+          text: "11'li hece yaklaşık %73 oranıyla Alevi-Bektaşi şiirinin ritmik omurgasını taşır."
+        },
+        {
+          title: "Kadın Sesi",
+          text: "18. yüzyılda Güzide Ana'dan modern dönemde Derman Bacı'ya uzanan süreklilik, kadın söyleminin canlılığını gösterir."
+        },
+        {
+          title: "En Genç Şair",
+          text: "Çağla Karasu (d. 1997), geleneğin yeni kuşaklarda da üretken biçimde sürdüğünü gösterir."
+        },
+        {
+          title: "Aile Mirası",
+          text: "Işık büyükbaba-torun hattı 45 yıla yayılan süreklilikle kelam geleneğini nesiller arasında diri tutar."
+        }
+      ];
+
+      const grid = d3.select("#insightsGrid");
+      grid.selectAll("*").remove();
+
+      const cards = grid.selectAll("article")
+        .data(insights)
+        .enter()
+        .append("article")
+        .attr("class", "insight");
+
+      cards.append("h4").text((d) => d.title);
+      cards.append("p").text((d) => d.text);
+    };
+
+    const renderWordCloud = (data) => {
+      const words = (data.word_cloud ?? [])
+        .filter((d) => d.word && Number.isFinite(d.count))
+        .sort((a, b) => b.count - a.count)
+        .slice(0, 120);
+      if (words.length === 0) return;
+
+      const { svg, width, height } = createSvg("#wordCloudChart", 450, { top: 12, right: 12, bottom: 12, left: 12 });
+      const minCount = d3.min(words, (d) => d.count);
+      const maxCount = d3.max(words, (d) => d.count);
+      const sizeScale = d3.scaleLinear()
+        .domain([minCount, maxCount])
+        .range([12, 64]);
+
+      const nodes = words.map((d, index) => {
+        const fontSize = sizeScale(d.count);
+        const widthGuess = Math.max(18, d.word.length * fontSize * 0.56);
+        return {
+          ...d,
+          index,
+          fontSize,
+          widthGuess,
+          heightGuess: fontSize * 0.92,
+          x: width / 2 + (Math.random() - 0.5) * 24,
+          y: height / 2 + (Math.random() - 0.5) * 24
+        };
+      });
+
+      const radiusScale = (d) => Math.max(d.widthGuess / 2, d.heightGuess / 2) + 2;
+      const simulation = d3.forceSimulation(nodes)
+        .force("x", d3.forceX(width / 2).strength(0.08))
+        .force("y", d3.forceY(height / 2).strength(0.08))
+        .force("collide", d3.forceCollide((d) => radiusScale(d)).iterations(2))
+        .stop();
+
+      simulation.tick(280);
+
+      const colorForRank = (rank) => {
+        if (rank < 10) return "#d4a574";
+        if (rank < 30) return "#f5f0e8";
+        return "#ada79b";
+      };
+
+      svg.append("g")
+        .attr("transform", `translate(0, 0)`)
+        .selectAll("text")
+        .data(nodes)
+        .join("text")
+        .attr("x", (d) => Math.max(14, Math.min(width - 14, d.x)))
+        .attr("y", (d) => Math.max(18, Math.min(height - 10, d.y)))
+        .attr("text-anchor", "middle")
+        .attr("dominant-baseline", "central")
+        .attr("font-family", "Inter, sans-serif")
+        .attr("font-size", (d) => d.fontSize)
+        .attr("font-weight", (d) => (d.index < 10 ? 700 : 500))
+        .attr("fill", (d) => colorForRank(d.index))
+        .style("cursor", "default")
+        .text((d) => d.word)
+        .on("mouseenter", (event, d) => {
+          showTooltip(event, `<strong>${d.word}</strong><br>Geçiş sayısı: ${formatNumber(d.count)}`);
+        })
+        .on("mousemove", moveTooltip)
+        .on("mouseleave", hideTooltip);
+    };
+
+    const renderThemeHeatmap = (data) => {
+      const matrix = (data.theme_era_matrix ?? []).filter((d) => d.era && d.theme);
+      if (matrix.length === 0) return;
+
+      const eras = ["Kurucu Dönem", "Klasik Dönem", "Geç Dönem", "Modern Dönem"];
+      const themes = Array.from(new Set(matrix.map((d) => d.theme)));
+
+      const { svg, width, height } = createSvg("#themeHeatmapChart", 480, { top: 24, right: 96, bottom: 40, left: 160 });
+      const margin = { top: 24, right: 96, bottom: 40, left: 160 };
+      const innerWidth = width - margin.left - margin.right;
+      const innerHeight = height - margin.top - margin.bottom;
+
+      const x = d3.scaleBand().domain(eras).range([0, innerWidth]).padding(0.08);
+      const y = d3.scaleBand().domain(themes).range([0, innerHeight]).padding(0.06);
+
+      const maxValue = d3.max(matrix, (d) => d.count) ?? 1;
+      const color = d3.scaleLinear()
+        .domain([0, maxValue])
+        .range(["rgba(212,165,116,0.10)", "#d4a574"]);
+
+      const chart = svg.append("g").attr("transform", `translate(${margin.left},${margin.top})`);
+
+      chart.append("g")
+        .selectAll("rect")
+        .data(matrix)
+        .join("rect")
+        .attr("x", (d) => x(d.era))
+        .attr("y", (d) => y(d.theme))
+        .attr("width", x.bandwidth())
+        .attr("height", y.bandwidth())
+        .attr("rx", 4)
+        .attr("fill", (d) => color(d.count))
+        .attr("stroke", "rgba(255,255,255,0.06)")
+        .attr("stroke-width", 1)
+        .on("mouseenter", (event, d) => {
+          showTooltip(event, `<strong>${d.theme}</strong><br>${d.era}<br>Yoğunluk: ${formatNumber(d.count)}`);
+        })
+        .on("mousemove", moveTooltip)
+        .on("mouseleave", hideTooltip);
+
+      chart.append("g")
+        .attr("transform", `translate(0, ${innerHeight})`)
+        .call(d3.axisBottom(x))
+        .call((axis) => axis.selectAll("text").attr("fill", "#ada79b").attr("font-family", "Inter, sans-serif").attr("font-size", 11))
+        .call((axis) => axis.selectAll("line").attr("stroke", "rgba(255,255,255,0.06)"))
+        .call((axis) => axis.select("path").attr("stroke", "rgba(255,255,255,0.06)"));
+
+      chart.append("g")
+        .call(d3.axisLeft(y))
+        .call((axis) => axis.selectAll("text").attr("fill", "#ada79b").attr("font-family", "Inter, sans-serif").attr("font-size", 11))
+        .call((axis) => axis.selectAll("line").attr("stroke", "rgba(255,255,255,0.06)"))
+        .call((axis) => axis.select("path").attr("stroke", "rgba(255,255,255,0.06)"));
+
+      const defs = svg.append("defs");
+      const gradient = defs.append("linearGradient")
+        .attr("id", "themeHeatLegendGradient")
+        .attr("x1", "0%")
+        .attr("y1", "100%")
+        .attr("x2", "0%")
+        .attr("y2", "0%");
+      gradient.append("stop").attr("offset", "0%").attr("stop-color", "rgba(212,165,116,0.10)");
+      gradient.append("stop").attr("offset", "100%").attr("stop-color", "#d4a574");
+
+      const legendHeight = Math.max(120, innerHeight * 0.7);
+      const legendWidth = 14;
+      const legendX = width - margin.right + 32;
+      const legendY = margin.top + (innerHeight - legendHeight) / 2;
+
+      svg.append("rect")
+        .attr("x", legendX)
+        .attr("y", legendY)
+        .attr("width", legendWidth)
+        .attr("height", legendHeight)
+        .attr("rx", 6)
+        .attr("fill", "url(#themeHeatLegendGradient)")
+        .attr("stroke", "rgba(255,255,255,0.16)");
+
+      const legendScale = d3.scaleLinear().domain([0, maxValue]).range([legendY + legendHeight, legendY]);
+      svg.append("g")
+        .attr("transform", `translate(${legendX + legendWidth},0)`)
+        .call(d3.axisRight(legendScale).ticks(5))
+        .call((axis) => axis.selectAll("text").attr("fill", "#ada79b").attr("font-family", "Inter, sans-serif").attr("font-size", 10))
+        .call((axis) => axis.selectAll("line").attr("stroke", "rgba(255,255,255,0.08)"))
+        .call((axis) => axis.select("path").attr("stroke", "rgba(255,255,255,0.12)"));
+    };
+
+    const renderCommentaryDepth = (data) => {
+      const rows = (data.commentary_depth_top30 ?? [])
+        .filter((d) => Number.isFinite(d.density))
+        .sort((a, b) => b.density - a.density)
+        .slice(0, 15);
+      if (rows.length === 0) return;
+
+      const minHeight = rows.length * 30 + 110;
+      const { svg, width, height } = createSvg("#commentaryDepthChart", minHeight, { top: 24, right: 78, bottom: 44, left: 320 });
+      const margin = { top: 24, right: 78, bottom: 44, left: 320 };
+      const innerWidth = width - margin.left - margin.right;
+      const innerHeight = height - margin.top - margin.bottom;
+
+      const y = d3.scaleBand()
+        .domain(rows.map((_, i) => `${i}`))
+        .range([0, innerHeight])
+        .padding(0.2);
+
+      const maxDensity = d3.max(rows, (d) => d.density) ?? 1;
+      const x = d3.scaleLinear().domain([0, maxDensity * 1.12]).range([0, innerWidth]);
+      const color = d3.scaleLinear().domain([0, maxDensity]).range(["#d4a574", "#8b1a1a"]);
+
+      const chart = svg.append("g").attr("transform", `translate(${margin.left},${margin.top})`);
+
+      chart.append("g")
+        .attr("opacity", 1)
+        .call(d3.axisBottom(x).tickSize(innerHeight).tickFormat(() => ""))
+        .call((axis) => axis.selectAll("line").attr("stroke", "rgba(255,255,255,0.06)"))
+        .call((axis) => axis.select("path").remove());
+
+      chart.selectAll("rect")
+        .data(rows)
+        .join("rect")
+        .attr("x", 0)
+        .attr("y", (_, i) => y(`${i}`))
+        .attr("height", y.bandwidth())
+        .attr("width", (d) => x(d.density))
+        .attr("fill", (d) => color(d.density))
+        .attr("rx", 5)
+        .on("mouseenter", (event, d) => {
+          showTooltip(
+            event,
+            `<strong>${d.title}</strong><br>${d.poet}<br>Şiir: ${formatNumber(d.poem_tokens)} kelime<br>Şerh: ${formatNumber(d.commentary_tokens)} kelime<br>Şerh adedi: ${formatNumber(d.commentary_count)}<br>Yoğunluk: ${d.density.toFixed(2).replace(".", ",")}x`
+          );
+        })
+        .on("mousemove", moveTooltip)
+        .on("mouseleave", hideTooltip);
+
+      chart.selectAll("text.depth-label")
+        .data(rows)
+        .join("text")
+        .attr("class", "depth-label")
+        .attr("x", -12)
+        .attr("y", (_, i) => y(`${i}`) + y.bandwidth() / 2 + 4)
+        .attr("text-anchor", "end")
+        .attr("fill", "#ada79b")
+        .attr("font-family", "Inter, sans-serif")
+        .attr("font-size", 11)
+        .text((d) => {
+          const shortTitle = d.title.length > 26 ? `${d.title.slice(0, 25)}…` : d.title;
+          return `${d.poet} • ${shortTitle}`;
+        });
+
+      chart.selectAll("text.depth-value")
+        .data(rows)
+        .join("text")
+        .attr("class", "depth-value")
+        .attr("x", (d) => x(d.density) + 8)
+        .attr("y", (_, i) => y(`${i}`) + y.bandwidth() / 2 + 4)
+        .attr("fill", "#f5f0e8")
+        .attr("font-family", "Inter, sans-serif")
+        .attr("font-size", 11)
+        .text((d) => `${d.density.toFixed(1).replace(".", ",")}x`);
+
+      chart.append("g")
+        .attr("transform", `translate(0, ${innerHeight})`)
+        .call(d3.axisBottom(x).ticks(6))
+        .call((axis) => axis.selectAll("text").attr("fill", "#ada79b").attr("font-family", "Inter, sans-serif").attr("font-size", 11))
+        .call((axis) => axis.selectAll("line").attr("stroke", "rgba(255,255,255,0.12)"))
+        .call((axis) => axis.select("path").attr("stroke", "rgba(255,255,255,0.12)"));
+    };
+
+    const renderPoetSignatures = (data) => {
+      const entries = Object.entries(data.poet_signatures ?? {});
+      if (entries.length === 0) return;
+
+      const topPoets = entries
+        .map(([poet, words]) => ({
+          poet,
+          words,
+          totalScore: d3.sum((words ?? []).slice(0, 7), (d) => d.score)
+        }))
+        .sort((a, b) => b.totalScore - a.totalScore)
+        .slice(0, 6);
+
+      const { svg, width, height } = createSvg("#poetSignaturesChart", 600, { top: 20, right: 20, bottom: 16, left: 20 });
+      const margin = { top: 20, right: 20, bottom: 16, left: 20 };
+      const innerWidth = width - margin.left - margin.right;
+      const innerHeight = height - margin.top - margin.bottom;
+      const columns = 3;
+      const rows = 2;
+      const gapX = 14;
+      const gapY = 14;
+      const cellWidth = (innerWidth - (columns - 1) * gapX) / columns;
+      const cellHeight = (innerHeight - (rows - 1) * gapY) / rows;
+      const poetColors = ["#d4a574", "#c19a6b", "#8b1a1a", "#1a5276", "#8f7a62", "#7f8c8d"];
+
+      const root = svg.append("g").attr("transform", `translate(${margin.left},${margin.top})`);
+
+      topPoets.forEach((poetData, index) => {
+        const col = index % columns;
+        const row = Math.floor(index / columns);
+        const x0 = col * (cellWidth + gapX);
+        const y0 = row * (cellHeight + gapY);
+        const color = poetColors[index % poetColors.length];
+
+        const group = root.append("g").attr("transform", `translate(${x0},${y0})`);
+        group.append("rect")
+          .attr("width", cellWidth)
+          .attr("height", cellHeight)
+          .attr("rx", 10)
+          .attr("fill", "rgba(255,255,255,0.02)")
+          .attr("stroke", "rgba(255,255,255,0.08)");
+
+        group.append("text")
+          .attr("x", 12)
+          .attr("y", 24)
+          .attr("fill", "#f5f0e8")
+          .attr("font-family", "Cormorant Garamond, serif")
+          .attr("font-size", 22)
+          .attr("font-weight", 600)
+          .text(poetData.poet.length > 28 ? `${poetData.poet.slice(0, 27)}…` : poetData.poet);
+
+        const words = (poetData.words ?? []).slice(0, 7);
+        const maxScore = d3.max(words, (d) => d.score) ?? 0.0001;
+        const barAreaWidth = Math.max(40, cellWidth - 96);
+        const xScale = d3.scaleLinear().domain([0, maxScore]).range([0, barAreaWidth]);
+
+        words.forEach((w, i) => {
+          const rowTop = 40 + i * 26;
+          group.append("text")
+            .attr("x", 12)
+            .attr("y", rowTop + 11)
+            .attr("fill", "#ada79b")
+            .attr("font-family", "Inter, sans-serif")
+            .attr("font-size", 11)
+            .text(w.word);
+
+          group.append("rect")
+            .attr("x", 86)
+            .attr("y", rowTop)
+            .attr("width", Math.max(0, xScale(w.score)))
+            .attr("height", 12)
+            .attr("rx", 4)
+            .attr("fill", color)
+            .attr("fill-opacity", 0.84)
+            .on("mouseenter", (event) => {
+              showTooltip(
+                event,
+                `<strong>${poetData.poet}</strong><br>Kelime: ${w.word}<br>Kullanım: ${formatNumber(w.count)}<br>Ayırt edicilik: ${w.score.toFixed(4).replace(".", ",")}`
+              );
+            })
+            .on("mousemove", moveTooltip)
+            .on("mouseleave", hideTooltip);
+        });
+      });
+    };
+
+    const renderDeepPanels = () => {
+      if (!deepData) return;
+      renderWordCloud(deepData);
+      renderThemeHeatmap(deepData);
+      renderCommentaryDepth(deepData);
+      renderPoetSignatures(deepData);
+    };
+
+    const applySectionReveal = () => {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) entry.target.classList.add("visible");
+        });
+      }, { threshold: 0.2 });
+
+      document.querySelectorAll(".fade-section").forEach((section) => {
+        observer.observe(section);
+      });
+    };
+
+    const renderAll = () => {
+      if (!appData) return;
+      renderHeroStats(appData.summary);
+      renderTimeline(appData);
+      renderTreemap(appData);
+      renderDonut(appData);
+      renderScatter(appData);
+      renderLegacy(appData);
+      renderDiscoveries();
+    };
+
+    const initialize = async () => {
+      setStatus("Veri yükleniyor...");
+      try {
+        const [mainResponse, deepResponse] = await Promise.all([
+          fetch("viz-data.json", { cache: "no-store" }),
+          fetch("viz-deep.json", { cache: "no-store" })
+        ]);
+        if (!mainResponse.ok || !deepResponse.ok) {
+          throw new Error(`HTTP ${mainResponse.status}/${deepResponse.status}`);
+        }
+        const [mainJson, deepJson] = await Promise.all([
+          mainResponse.json(),
+          deepResponse.json()
+        ]);
+        appData = mainJson;
+        deepData = deepJson;
+        setStatus("Veri başarıyla çözümlendi. Etkileşim için görselleri inceleyiniz.");
+        renderAll();
+        renderDeepPanels();
+      } catch (_) {
+        setStatus("Veri yüklenemedi. Lütfen aynı klasördeki 'viz-data.json' ve 'viz-deep.json' dosyalarını ve tarayıcı erişim izinlerini kontrol ediniz.");
+      }
+    };
+
+    const debounce = (fn, wait = 220) => {
+      let timer = null;
+      return (...args) => {
+        clearTimeout(timer);
+        timer = setTimeout(() => fn(...args), wait);
+      };
+    };
+
+    applySectionReveal();
+    initialize();
+    window.addEventListener("resize", debounce(() => {
+      if (appData) renderAll();
+      if (deepData) renderDeepPanels();
+    }));
+  </script>
+</body>
+</html>
